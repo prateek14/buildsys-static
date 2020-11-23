@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import './header.scss';
 import { useMediaPredicate } from 'react-media-hook';
+import { Link } from 'react-router-dom';
 
 export const Header: React.FunctionComponent = (): JSX.Element => {
     const isMobile = useMediaPredicate('(max-width: 979px)');
@@ -48,9 +49,9 @@ const HeaderMobile: React.FunctionComponent = (): JSX.Element => {
 const HeaderLogo: React.FunctionComponent = (): JSX.Element => {
     return (
         <div className="header-logo flex-center">
-            <a href="/" className="logo-img-anchor">
+            <Link to="/" className="logo-img-anchor">
                 <img className="logo-img" src="logo.png" alt="Buildsys" title="Buildsys" />
-            </a>
+            </Link>
         </div>
     );
 };
@@ -60,24 +61,29 @@ const HeaderNav: React.FunctionComponent = (): JSX.Element => {
         <nav className="header-nav">
             <ul>
                 <li>
-                    <a href="/">
+                    <Link to="/">
                         <span>Home</span>
-                    </a>
+                    </Link>
                 </li>
                 <li>
-                    <a href="/products-solutions">
-                        <span>Solutions</span>
-                    </a>
+                    <Link to="/what">
+                        <span>What we do</span>
+                    </Link>
                 </li>
                 <li>
-                    <a href="/about-us">
-                        <span>About Us</span>
-                    </a>
+                    <Link to="/who">
+                        <span>We work with</span>
+                    </Link>
                 </li>
                 <li>
-                    <a href="/contact-us">
+                    <Link to="/us">
+                        <span>About us</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/contact">
                         <span>Contact</span>
-                    </a>
+                    </Link>
                 </li>
             </ul>
         </nav>
