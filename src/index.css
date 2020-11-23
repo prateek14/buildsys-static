@@ -23,3 +23,13 @@ code {
     display: flex;
     justify-content: space-between;
 }
+
+.flex-justify-center {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
