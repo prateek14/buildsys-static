@@ -2,6 +2,7 @@ import React from 'react';
 import { useMediaPredicate } from 'react-media-hook';
 import './footer.scss';
 import { FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { ContactForm } from '../contact/contact-form';
 
 export const Footer: React.FunctionComponent = (): JSX.Element => {
     const isMobile = useMediaPredicate('(max-width: 979px)');
@@ -77,6 +78,9 @@ export const FooterMain: React.FunctionComponent = (): JSX.Element => {
                 </div>
                 <div className="col">
                     <div className="title">Get in touch</div>
+                    <div>
+                        <ContactForm></ContactForm>
+                    </div>
                 </div>
             </div>
         </div>

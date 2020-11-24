@@ -1,0 +1,83 @@
+.contact-form {
+    .frm_form_fields {
+        .frm_fields_container {
+            .frm_form_field {
+                margin-bottom: 20px;
+            }
+
+            label {
+                display: none;
+            }
+
+            .frm-error {
+                color: #B94A48;
+            }
+
+            input[type=text],
+            input[type=email],
+            textarea {
+                letter-spacing: 0;
+                font-weight: 400;
+                height: 32px;
+                color: #555555;
+                background-color: #ffffff;
+                border-color: #cccccc;
+                border-width: 1px;
+                border-style: solid;
+                width: 100%;
+                max-width: 100%;
+                font-size: 14px;
+                padding: 6px 10px;
+                box-sizing: border-box;
+                outline: none;
+                font-weight: normal;
+                box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+                font-family: Roboto;
+                font-size: 15px;
+                line-height: 24px;
+                margin-bottom: 0;
+
+                &:focus {
+                    background-color: #ffffff;
+                    border-color: #66afe9;
+                    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
+                }
+            }
+
+            input[type=submit] {
+                margin: 0px;
+                height: 40px;
+                min-width: 170px;
+                font-size: 15px;
+                font-weight: 500;
+                text-transform: none;
+                letter-spacing: 0px;
+                border: 1px solid rgb(78, 84, 94);
+                border-radius: 4px;
+                background: rgba(0, 0, 0, 0.01);
+                color: rgb(160, 171, 189);
+                font-family: Roboto;
+                text-align: center;
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+                box-shadow: none;
+
+                background: #efefef;
+                border-color: #cccccc;
+                color: #444444;
+
+                &:hover {
+                    border-color: #3a78ff;
+                    background: #3a78ff;
+                    color: white;
+                }
+                cursor: pointer;
+            }
+
+            textarea {
+                min-height: 128px;
+            }
+        }
+    }
+}
