@@ -1,0 +1,101 @@
+.footer {
+
+    .footer-secondary {
+        background-color: #191a1b;
+        padding: 24px 40px;
+        color: #999999;
+
+        >div {
+            width: 100%;
+        }
+
+        a {
+
+            &,
+            &:hover,
+            &:active,
+            &:focus {
+
+                &,
+                span {
+                    color: #999999;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .footer-social-icons {
+            >a {
+                padding: 0 8px;
+
+                &:last-child {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+
+    &.footer-mobile {
+        .footer-secondary {
+            >div {
+                flex-direction: column;
+
+                >div {
+                    padding: 8px 0;
+                }
+            }
+        }
+    }
+
+    .footer-main {
+        background-color: #1d222b;
+        padding: 24px 40px;
+
+        color: #aeb7c1;
+
+        a {
+            text-decoration: none;
+            color: #ffffff;
+
+            &:hover,
+            &:active,
+            &:focus {
+
+                &,
+                span {
+                    color: #69d2e7;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        >div {
+            width: 100%;
+
+            .col {
+                flex: 0 0 calc(25% - 32px);
+                padding: 0 16px;
+
+                &:first-child {
+                    flex: 0 0 calc(25% - 16px);
+                    padding-left: 0;
+                }
+
+                &:last-child {
+                    flex: 0 0 calc(25% - 16px);
+                    padding-right: 0;
+                }
+
+                .title {
+                    color: white;
+                    font-family: Roboto;
+                    font-size: 11px;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                    margin-bottom: 40px;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
