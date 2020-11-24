@@ -1,4 +1,3 @@
-import { type } from 'os';
 import React, { PropsWithChildren } from 'react';
 import './default.scss';
 
