@@ -32,16 +32,23 @@ header {
             text-align: left;
         }
 
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+
         a {
 
-            &,
+            color: #666666;
+
+            &.active,
             &:hover,
             &:active,
             &:focus {
 
                 &,
                 span {
-                    color: black;
+                    color: #49b0f1;
                     text-decoration: none;
                 }
             }

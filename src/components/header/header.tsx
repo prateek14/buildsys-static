@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import './header.scss';
 import { useMediaPredicate } from 'react-media-hook';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 export const Header: React.FunctionComponent = (): JSX.Element => {
     const isMobile = useMediaPredicate('(max-width: 979px)');
@@ -61,29 +61,29 @@ const HeaderNav: React.FunctionComponent = (): JSX.Element => {
         <nav className="header-nav">
             <ul>
                 <li>
-                    <Link to="/">
+                    <NavLink exact={true} to="/" activeClassName="active">
                         <span>Home</span>
-                    </Link>
+                    </NavLink>
                 </li>
                 <li>
-                    <Link to="/what">
+                    <NavLink to="/what" activeClassName="active">
                         <span>What we do</span>
-                    </Link>
+                    </NavLink>
                 </li>
                 <li>
-                    <Link to="/who">
+                    <NavLink to="/who" activeClassName="active">
                         <span>We work with</span>
-                    </Link>
+                    </NavLink>
                 </li>
                 <li>
-                    <Link to="/us">
+                    <NavLink to="/us" activeClassName="active">
                         <span>About us</span>
-                    </Link>
+                    </NavLink>
                 </li>
                 <li>
-                    <Link to="/contact">
+                    <NavLink to="/contact" activeClassName="active">
                         <span>Contact</span>
-                    </Link>
+                    </NavLink>
                 </li>
             </ul>
         </nav>

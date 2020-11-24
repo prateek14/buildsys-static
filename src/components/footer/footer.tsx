@@ -39,13 +39,13 @@ export const FooterMain: React.FunctionComponent = (): JSX.Element => {
                     <div className="title">About Us</div>
                     <div>
                         Buildsys is a construction productivity application that reduces paperwork and makes
-                        field-to-office communication faster, trackable, and mobile. Buildsys works everywhere
-                        construction works, in the office, in the field and can be accessed from Web, iPad, iPhone and
-                        Android devices. Buildsys helps project managers manage all data at one place. It provides real
-                        time access to information to all stakeholders right on their phone. Stakeholders can view
-                        plans, manage tasks, or create RFIs right from the construction site. Teams can digitize and
-                        automate workflows and processes for approvals, design queries and RFIs.{' '}
-                        <a href="/about-us/">Learn More</a>
+                        field-to-office communication faster, trackable, and mobile. <br />
+                        Buildsys works everywhere construction works, in the office, in the field and can be accessed
+                        from Web, iPad, iPhone and Android devices. <br />
+                        Buildsys helps project managers manage all data at one place. It provides real time access to
+                        information to all stakeholders right on their phone. Stakeholders can view plans, manage tasks,
+                        or create RFIs right from the construction site. Teams can digitize and automate workflows and
+                        processes for approvals, design queries and RFIs. <a href="/us">Learn More</a>
                         <p>
                             <a href="/terms">Terms of Use</a>
                         </p>

@@ -1,4 +1,5 @@
 .footer {
+    font-size: 14px;
 
     .footer-secondary {
         background-color: #191a1b;
@@ -30,18 +31,6 @@
 
                 &:last-child {
                     padding-right: 0;
-                }
-            }
-        }
-    }
-
-    &.footer-mobile {
-        .footer-secondary {
-            >div {
-                flex-direction: column;
-
-                >div {
-                    padding: 8px 0;
                 }
             }
         }
@@ -94,6 +83,27 @@
                     text-transform: uppercase;
                     margin-bottom: 40px;
                     font-weight: 700;
+                }
+            }
+        }
+    }
+
+    &.footer-mobile {
+        .footer-secondary {
+            >div {
+                flex-direction: column;
+
+                >div {
+                    padding: 8px 0;
+                }
+            }
+        }
+        .footer-main {
+            >div {
+                flex-direction: column;
+
+                >div {
+                    padding: 8px 0;
                 }
             }
         }
