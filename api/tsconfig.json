@@ -6,7 +6,10 @@
     "rootDir": ".",
     "sourceMap": true,
     "strict": false,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": [
+      "./node_modules/@types"
+    ]
   },
   "include": [
     "ContactForm"
