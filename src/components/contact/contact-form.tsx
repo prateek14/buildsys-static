@@ -15,7 +15,8 @@ interface PostBody {
 export const ContactForm: React.FunctionComponent = (): JSX.Element => {
     const [errors, setErrors] = useState<IDictionary<string>>({});
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        const data = new FormData(event.target as HTMLFormElement);
+        const target = event.target as HTMLFormElement;
+        const data = new FormData(target);
         const nameValid = data.has('name') && (data.get('name') as string).trim();
         const emailValid = data.has('email') && (data.get('email') as string).trim();
         const messageValid = data.has('message') && (data.get('message') as string).trim();
@@ -63,6 +64,7 @@ export const ContactForm: React.FunctionComponent = (): JSX.Element => {
             .then((data) => {
                 console.log(data);
                 ToastUtils.success('Message sent successfully.');
+                target.reset();
             })
             .catch(() => {
                 ToastUtils.error('Failed to submit message.');
