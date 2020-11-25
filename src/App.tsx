@@ -8,6 +8,8 @@ import Footer from './components/footer/footer';
 import { Header } from './components/header/header';
 import { Default } from './components/default/default';
 import { LoremIpsum } from './constants';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const func: (x: string) => React.FunctionComponent = (x: string) => {
     const A: React.FunctionComponent = () => {
@@ -34,6 +36,7 @@ export const App: React.FunctionComponent = () => {
                     </Switch>
                 </Body>
                 <Footer></Footer>
+                <ToastContainer />
             </div>
         </Router>
     );

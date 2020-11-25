@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ToastUtils } from '../../utils/toast';
 
 import './contact-form.scss';
 
@@ -17,7 +18,7 @@ export const ContactForm: React.FunctionComponent = (): JSX.Element => {
         const data = new FormData(event.target as HTMLFormElement);
         const nameValid = data.has('name') && (data.get('name') as string).trim();
         const emailValid = data.has('email') && (data.get('email') as string).trim();
-        const messageValid = data.has('message') && (data.get('email') as string).trim();
+        const messageValid = data.has('message') && (data.get('message') as string).trim();
         const companyValid = data.has('company') && (data.get('company') as string).trim();
 
         const errors: IDictionary<string> = {};
@@ -44,15 +45,13 @@ export const ContactForm: React.FunctionComponent = (): JSX.Element => {
             object[key] = value as string;
         });
 
-        console.log(JSON.stringify(object));
-
         let message = 'New message on Contact Form' + '\r\n';
         message += 'Name: ' + object['name'] + '\r\n';
         message += 'Email: ' + object['email'] + '\r\n';
         message += 'Company: ' + object['company'] + '\r\n';
         message += 'Message:\r\n ' + object['message'] + '\r\n';
 
-        const opts: PostBody = { email: object['email'], message: message };
+        const opts: PostBody = { email: 'hello@buildsys.co', message: message };
 
         fetch('/api/sendEmail', {
             method: 'post',
@@ -63,7 +62,10 @@ export const ContactForm: React.FunctionComponent = (): JSX.Element => {
             })
             .then((data) => {
                 console.log(data);
-                console.log('Email Sent');
+                ToastUtils.success('Message sent successfully.');
+            })
+            .catch(() => {
+                ToastUtils.error('Failed to submit message.');
             });
 
         event.preventDefault();
