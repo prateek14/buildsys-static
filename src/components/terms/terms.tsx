@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTitle } from '../../utils/common';
 import { Default } from '../default/default';
 
 export const Terms: React.FunctionComponent = (): JSX.Element => {
+    const title = 'Terms of Use';
+    useTitle(title);
     return (
-        <Default title="Terms of Service">
+        <Default title={title}>
             <p>Effective Date: January 1, 2020</p>
             <p>
                 The <a href="https://app.buildsys.co">https://app.buildsys.co</a> and{' '}
@@ -254,8 +257,10 @@ export const Terms: React.FunctionComponent = (): JSX.Element => {
 };
 
 export const Privacy: React.FunctionComponent = (): JSX.Element => {
+    const title = 'Privacy Policy';
+    useTitle(title);
     return (
-        <Default title="Privacy Notice">
+        <Default title={title}>
             <p>Effective Date: January 1, 2020</p>
             <p>
                 Welcome to the website of Buildsys Software Pvt Ltd (collectively with any subsidiaries and affiliates,

@@ -10,9 +10,11 @@ import { Default } from './components/default/default';
 import { LoremIpsum } from './constants';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useTitle } from './utils/common';
 
 const func: (x: string) => React.FunctionComponent = (x: string) => {
     const A: React.FunctionComponent = () => {
+        useTitle(x);
         return <Default title={x}>{LoremIpsum}</Default>;
     };
     return A;
