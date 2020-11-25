@@ -94,7 +94,7 @@ export const FooterSecondary: React.FunctionComponent = (): JSX.Element => {
             <div className="flex-justify flex-center">
                 <div className="footer_sub_left">
                     <span>
-                        <img src="/assets/text-icon_white.png" style={{ maxWidth: '150px' }} />
+                        <img alt="Buildsys Logo" src="/assets/text-icon_white.png" width="150" height="30" />
                     </span>
                 </div>
                 <div className="footer_sub_center">
