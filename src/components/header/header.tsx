@@ -35,12 +35,16 @@ const HeaderMobile: React.FunctionComponent = (): JSX.Element => {
             <div className="header header-mobile flex-center flex-justify">
                 <HeaderLogo></HeaderLogo>
                 <HeaderHamburger
+                    isOpen={isOpen}
                     onChange={(v) => {
                         setIsOpen(v);
                     }}></HeaderHamburger>
             </div>
             <div className={classNames}>
-                <HeaderNav></HeaderNav>
+                <HeaderNav
+                    onClick={() => {
+                        setIsOpen(false);
+                    }}></HeaderNav>
             </div>
         </Fragment>
     );
@@ -56,32 +60,41 @@ const HeaderLogo: React.FunctionComponent = (): JSX.Element => {
     );
 };
 
-const HeaderNav: React.FunctionComponent = (): JSX.Element => {
+const HeaderNav: React.FunctionComponent<{ onClick?: () => void }> = ({
+    onClick,
+}: {
+    onClick?: () => void;
+}): JSX.Element => {
+    if (!onClick) {
+        onClick = () => {
+            //
+        };
+    }
     return (
         <nav className="header-nav">
             <ul>
                 <li>
-                    <NavLink exact={true} to="/" activeClassName="active">
+                    <NavLink onClick={onClick} exact={true} to="/" activeClassName="active">
                         <span>Home</span>
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/what" activeClassName="active">
+                    <NavLink onClick={onClick} to="/what" activeClassName="active">
                         <span>What we do</span>
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/who" activeClassName="active">
+                    <NavLink onClick={onClick} to="/who" activeClassName="active">
                         <span>We work with</span>
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/us" activeClassName="active">
+                    <NavLink onClick={onClick} to="/us" activeClassName="active">
                         <span>About us</span>
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/contact" activeClassName="active">
+                    <NavLink onClick={onClick} to="/contact" activeClassName="active">
                         <span>Contact</span>
                     </NavLink>
                 </li>
@@ -91,9 +104,9 @@ const HeaderNav: React.FunctionComponent = (): JSX.Element => {
 };
 
 const HeaderHamburger: React.FunctionComponent<{
-    onChange?: (value: boolean) => void;
-}> = ({ onChange }: { onChange?: (value: boolean) => void }): JSX.Element => {
-    const [isOpen, setIsOpen] = useState(false);
+    isOpen: boolean;
+    onChange: (value: boolean) => void;
+}> = ({ isOpen, onChange }: { isOpen: boolean; onChange: (value: boolean) => void }): JSX.Element => {
     const [isClosing, setIsClosing] = useState(false);
     let classNames = 'flex-column flex-justify-center header-hamburger';
     if (isOpen) {
@@ -106,10 +119,7 @@ const HeaderHamburger: React.FunctionComponent<{
         <div
             className={classNames}
             onClick={() => {
-                setIsOpen(!isOpen);
-                if (onChange) {
-                    onChange(!isOpen);
-                }
+                onChange(!isOpen);
                 if (isOpen) {
                     setIsClosing(true);
                     setTimeout(() => {
