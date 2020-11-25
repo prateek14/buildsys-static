@@ -54,7 +54,7 @@ const HeaderLogo: React.FunctionComponent = (): JSX.Element => {
     return (
         <div className="header-logo flex-center">
             <Link to="/" className="logo-img-anchor">
-                <img className="logo-img" src="assets/logo.png" alt="Buildsys" title="Buildsys" />
+                <img className="logo-img" src="assets/logo_small.png" alt="Buildsys" title="Buildsys" />
             </Link>
         </div>
     );
