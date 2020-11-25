@@ -3,6 +3,7 @@ import { useMediaPredicate } from 'react-media-hook';
 import './footer.scss';
 import { FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { ContactForm } from '../contact/contact-form';
+import { Link } from 'react-router-dom';
 
 export const Footer: React.FunctionComponent = (): JSX.Element => {
     const isMobile = useMediaPredicate('(max-width: 979px)');
@@ -46,12 +47,12 @@ export const FooterMain: React.FunctionComponent = (): JSX.Element => {
                         Buildsys helps project managers manage all data at one place. It provides real time access to
                         information to all stakeholders right on their phone. Stakeholders can view plans, manage tasks,
                         or create RFIs right from the construction site. Teams can digitize and automate workflows and
-                        processes for approvals, design queries and RFIs. <a href="/us">Learn More</a>
+                        processes for approvals, design queries and RFIs. <Link to="/us">Learn More</Link>
                         <p>
-                            <a href="/terms">Terms of Use</a>
+                            <Link to="/terms">Terms of Use</Link>
                         </p>
                         <p>
-                            <a href="/privacy-notice">Privacy Policy</a>
+                            <Link to="/privacy-notice">Privacy Policy</Link>
                         </p>
                     </div>
                 </div>
@@ -101,13 +102,16 @@ export const FooterSecondary: React.FunctionComponent = (): JSX.Element => {
                 </div>
                 <div className="footer_sub_right">
                     <span className="footer-social-icons">
-                        <a href="https://twitter.com/BuildsysCo">
+                        <a href="https://twitter.com/BuildsysCo" rel="noopener noreferrer" target="_blank">
                             <FaTwitter />
                         </a>
-                        <a href="https://www.linkedin.com/company/buildsysinc/">
+                        <a
+                            href="https://www.linkedin.com/company/buildsysinc/"
+                            rel="noopener noreferrer"
+                            target="_blank">
                             <FaLinkedin />
                         </a>
-                        <a href="https://www.facebook.com/buildsysinc">
+                        <a href="https://www.facebook.com/buildsysinc" rel="noopener noreferrer" target="_blank">
                             <FaFacebook />
                         </a>
                     </span>

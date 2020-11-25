@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Default } from '../default/default';
 
 export const Terms: React.FunctionComponent = (): JSX.Element => {
@@ -7,12 +8,12 @@ export const Terms: React.FunctionComponent = (): JSX.Element => {
             <p>Effective Date: January 1, 2020</p>
             <p>
                 The <a href="https://app.buildsys.co">https://app.buildsys.co</a> and{' '}
-                <a href="https://buildsys.co">https://buildsys.co</a> websites, and any other website on which these
-                Terms of Service appear (the “Websites”), and any software, mobile applications, products, devices or
-                other services offered by Buildsys from time to time and other services offered through third parties
-                integrating Buildsys functionality (collectively, “Services”), are made available by Buildsys Software
-                Pvt Ltd (“Buildsys”). You may access and utilize the Websites and Services only under the following
-                terms and conditions (“Terms of Service”).
+                <Link to="/">https://buildsys.co</Link> websites, and any other website on which these Terms of Service
+                appear (the “Websites”), and any software, mobile applications, products, devices or other services
+                offered by Buildsys from time to time and other services offered through third parties integrating
+                Buildsys functionality (collectively, “Services”), are made available by Buildsys Software Pvt Ltd
+                (“Buildsys”). You may access and utilize the Websites and Services only under the following terms and
+                conditions (“Terms of Service”).
             </p>
             <p>
                 These Terms of Service apply to all users of the Websites and Services. By using the Websites and
@@ -157,9 +158,9 @@ export const Terms: React.FunctionComponent = (): JSX.Element => {
                 liable for the privacy of any of your or any other third-party postings to the Websites or Services and
                 specifically disclaims any liability resulting from such postings and communications, including any
                 objectionable content. Please also see Buildsys’s complete{' '}
-                <a href="/privacy-notice">
+                <Link to="/privacy-notice">
                     <strong>Privacy Notice</strong>
-                </a>
+                </Link>
                 , incorporated into these Terms of Service by reference.
             </p>
             <h4>Errors and Corrections</h4>
@@ -260,14 +261,13 @@ export const Privacy: React.FunctionComponent = (): JSX.Element => {
                 Welcome to the website of Buildsys Software Pvt Ltd (collectively with any subsidiaries and affiliates,
                 “Buildsys”, “Company”, “we”, “us”, or “our”). We have prepared this Privacy Notice (“Privacy Notice”) to
                 explain how we collect, use, protect, and disclose your information when you use (1) The Buildsys
-                website <a href="https://buildsys.co">https://buildsys.co</a>, or any other Buildsys websites on which
-                this Privacy Notice appears (“Sites”), or (2) Buildsys’s software-as-a-service products, including the
-                software available through our platform via{' '}
-                <a href="https://app.buildsys.co">https://app.buildsys.co</a>, and any software, mobile applications,
-                products, devices, or other services offered by Buildsys from time to time (collectively, “Buildsys”).
-                It also describes the choices available to you regarding the use of, your access to, and how to update
-                and correct your personal information. “You” refers to you as a visitor or a user of the Sites or of
-                Buildsys.
+                website <Link to="/">https://buildsys.co</Link>, or any other Buildsys websites on which this Privacy
+                Notice appears (“Sites”), or (2) Buildsys’s software-as-a-service products, including the software
+                available through our platform via <a href="https://app.buildsys.co">https://app.buildsys.co</a>, and
+                any software, mobile applications, products, devices, or other services offered by Buildsys from time to
+                time (collectively, “Buildsys”). It also describes the choices available to you regarding the use of,
+                your access to, and how to update and correct your personal information. “You” refers to you as a
+                visitor or a user of the Sites or of Buildsys.
             </p>
             <p>
                 This Privacy Notice applies to the Personal Information we collect and use as a data controller. For
@@ -280,7 +280,7 @@ export const Privacy: React.FunctionComponent = (): JSX.Element => {
                 Buildsys is a provider of cloud-based construction management software, headquartered in New Delhi,
                 India. Buildsys connects people, applications, and devices and construction firms build quality projects
                 on time, and within budget. For more information, please see the “About Us” section of our Website at{' '}
-                <a href="/us">https://buildsys.co/us</a>.
+                <Link to="/us">https://buildsys.co/us</Link>.
             </p>
             <p>
                 Use of Buildsys is governed by a separate agreement (“Master Subscription Agreement”) that also covers
