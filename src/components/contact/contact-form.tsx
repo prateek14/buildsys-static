@@ -81,13 +81,12 @@ export const ContactForm: React.FunctionComponent = (): JSX.Element => {
                         className="frm_form_field form-field  frm_required_field frm_none_container">
                         <label htmlFor="name" className="frm_primary_label">
                             Name
-                            <span className="frm_required">*</span>
+                            <span className="frm_required"> *</span>
                         </label>
                         <input
                             type="text"
                             id="name"
                             name="name"
-                            placeholder="Name"
                             data-reqmsg="This field cannot be blank."
                             data-invmsg="Name is invalid"
                             className=""
@@ -99,17 +98,17 @@ export const ContactForm: React.FunctionComponent = (): JSX.Element => {
                         className="frm_form_field form-field  frm_required_field frm_none_container">
                         <label htmlFor="email" className="frm_primary_label">
                             Email Address
-                            <span className="frm_required">*</span>
+                            <span className="frm_required"> *</span>
                         </label>
-                        <input type="email" id="email" name="email" placeholder="Email Address" />
+                        <input type="email" id="email" name="email" />
                         {errors['email'] && <div className="frm-error">{errors['email']}</div>}
                     </div>
                     <div id="frm_field_26_container" className="frm_form_field form-field  frm_none_container">
                         <label htmlFor="company" className="frm_primary_label">
                             Company Name
-                            <span className="frm_required"></span>
+                            <span className="frm_required"> *</span>
                         </label>
-                        <input type="text" placeholder="Company" id="company" name="company" />
+                        <input type="text" id="company" name="company" />
                         {errors['company'] && <div className="frm-error">{errors['company']}</div>}
                     </div>
                     <div
@@ -117,9 +116,9 @@ export const ContactForm: React.FunctionComponent = (): JSX.Element => {
                         className="frm_form_field form-field  frm_required_field frm_none_container frm_full">
                         <label htmlFor="message" className="frm_primary_label">
                             Message
-                            <span className="frm_required">*</span>
+                            <span className="frm_required"> *</span>
                         </label>
-                        <textarea name="message" id="message" rows={5} placeholder="Message"></textarea>
+                        <textarea name="message" id="message" rows={5}></textarea>
                         {errors['message'] && <div className="frm-error">{errors['message']}</div>}
                     </div>
                     <div className="frm_submit">

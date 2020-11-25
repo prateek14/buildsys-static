@@ -7,6 +7,7 @@
     }
   ],
   "defaultHeaders": {
+    "accept-encoding": "gzip, compress, br",
     "content-security-policy": "default-src https: 'unsafe-eval' 'unsafe-inline'; object-src 'none'",
     "cache-control": "max-age=86400",
     "x-dns-prefetch-control": ""
