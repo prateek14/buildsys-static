@@ -1,8 +1,8 @@
-module.exports = {
+const appConfig = {
     entry: './src/index.tsx',
     output: {
         path: __dirname + '/public',
-        filename: 'build/index.js',
+        filename: 'index.js',
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js', 'css', 'svg'],
@@ -48,3 +48,19 @@ module.exports = {
         historyApiFallback: true,
     },
 };
+
+const serviceWorkerConfig = {
+    entry: './src/service-worker.ts',
+    output: {
+        path: __dirname + '/public',
+        filename: 'service-worker.js',
+    },
+    resolve: {
+        extensions: ['.ts', '.js'],
+    },
+    module: {
+        rules: [{ test: /\.tsx?$/, loader: 'ts-loader' }],
+    },
+};
+
+module.exports = [appConfig, serviceWorkerConfig];
