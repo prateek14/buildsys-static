@@ -47,7 +47,8 @@ export const FooterMain: React.FunctionComponent = (): JSX.Element => {
                         Buildsys helps project managers manage all data at one place. It provides real time access to
                         information to all stakeholders right on their phone. Stakeholders can view plans, manage tasks,
                         or create RFIs right from the construction site. Teams can digitize and automate workflows and
-                        processes for approvals, design queries and RFIs. <Link to="/us">Learn More</Link>
+                        processes for approvals, design queries and RFIs.{' '}
+                        <Link to="/us">Learn more about Buildsys</Link>
                         <p>
                             <Link to="/terms">Terms of Use</Link>
                         </p>
