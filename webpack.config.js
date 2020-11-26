@@ -3,6 +3,7 @@ const appConfig = {
     output: {
         path: __dirname + '/public',
         filename: 'index.js',
+        chunkFilename: '[name].js',
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js', 'css', 'svg'],
@@ -46,6 +47,24 @@ const appConfig = {
     },
     devServer: {
         historyApiFallback: true,
+    },
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                react: {
+                    test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+                    name: 'react',
+                    chunks: 'all',
+                    priority: 10,
+                },
+                vendors: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendors',
+                    chunks: 'all',
+                    priority: 5,
+                },
+            },
+        },
     },
 };
 
