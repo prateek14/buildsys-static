@@ -103,16 +103,25 @@ export const FooterSecondary: React.FunctionComponent = (): JSX.Element => {
                 </div>
                 <div className="footer_sub_right">
                     <span className="footer-social-icons">
-                        <a href="https://twitter.com/BuildsysCo" rel="noopener noreferrer" target="_blank">
+                        <a
+                            href="https://twitter.com/BuildsysCo"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                            aria-label="Buildsys on Twitter">
                             <FaTwitter />
                         </a>
                         <a
                             href="https://www.linkedin.com/company/buildsysinc/"
                             rel="noopener noreferrer"
-                            target="_blank">
+                            target="_blank"
+                            aria-label="Buildsys on Twitter">
                             <FaLinkedin />
                         </a>
-                        <a href="https://www.facebook.com/buildsysinc" rel="noopener noreferrer" target="_blank">
+                        <a
+                            href="https://www.facebook.com/buildsysinc"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                            aria-label="Buildsys on Facebook">
                             <FaFacebook />
                         </a>
                     </span>

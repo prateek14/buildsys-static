@@ -10,7 +10,7 @@
             // }
 
             .frm-error {
-                color: #B94A48;
+                color: #b00020;
             }
 
             input[type=text],
@@ -19,7 +19,7 @@
                 letter-spacing: 0;
                 font-weight: 400;
                 height: 32px;
-                color: #555555;
+                color: rgba(0, 0, 0, 0.6);
                 background-color: #ffffff;
                 border-color: #cccccc;
                 border-width: 1px;
@@ -37,7 +37,7 @@
 
                 &:focus {
                     background-color: #ffffff;
-                    border-color: #66afe9;
+                    border-color: #3079cd;
                     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
                 }
             }
@@ -65,8 +65,8 @@
                 color: #444444;
 
                 &:hover {
-                    border-color: #3a78ff;
-                    background: #3a78ff;
+                    border-color: #3079cd;
+                    background: #3079cd;
                     color: white;
                 }
 
