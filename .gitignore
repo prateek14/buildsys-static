@@ -24,3 +24,6 @@ yarn-error.log*
 node_modules
 .eslintcache
 
+public/1.index.js
+public/index.js
+public/service-worker.js
