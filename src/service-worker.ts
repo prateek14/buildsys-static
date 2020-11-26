@@ -23,6 +23,7 @@ self.__WB_MANIFEST = [
     { url: '/index.js', revision: '1' },
     { url: '/assets/icon_logo.png' },
     { url: '/assets/logo_small.png' },
+    { url: '/assets/logo_big.png' },
     { url: '/assets/logo.png' },
     { url: '/assets/logo192.png' },
     { url: '/assets/logo512.png' },

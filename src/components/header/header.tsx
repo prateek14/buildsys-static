@@ -56,11 +56,11 @@ const HeaderLogo: React.FunctionComponent = (): JSX.Element => {
             <Link to="/" className="logo-img-anchor">
                 <img
                     className="logo-img"
-                    width="180"
-                    height="35"
-                    src="assets/logo_small.png"
+                    src="assets/logo_big.png"
                     alt="Buildsys Logo"
                     title="Buildsys"
+                    width="180"
+                    height="35"
                 />
             </Link>
         </div>

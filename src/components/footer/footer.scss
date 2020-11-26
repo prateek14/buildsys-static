@@ -89,6 +89,8 @@
 
     &.footer-mobile {
         .footer-secondary {
+            text-align: center;
+
             >div {
                 flex-direction: column;
 
@@ -96,10 +98,30 @@
                     padding: 8px 0;
                 }
             }
+
+            .footer-social-icons {
+                display: block;
+
+                >a {
+                    display: inline-block;
+                    padding: 0 20px;
+
+                    >svg {
+                        width: 3.5em;
+                        height: 3.5em;
+                    }
+                }
+            }
         }
+
         .footer-main {
             >div {
                 flex-direction: column;
+
+                .col .title {
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                }
 
                 >div {
                     padding: 8px 0;
