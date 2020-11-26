@@ -20,7 +20,8 @@
     // "noEmit": true,
     "jsx": "react",
     "typeRoots": [
-      "types"
+      "types",
+      "node_modules/@types"
     ],
     // "types": [
     //   "@types/jest",
