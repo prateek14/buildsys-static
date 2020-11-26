@@ -20,7 +20,7 @@ clientsClaim();
 
 self.__WB_MANIFEST = [
     { url: '/index.html', revision: '1' },
-    { url: '/build/index.js', revision: '1' },
+    { url: '/index.js', revision: '1' },
     { url: '/assets/icon_logo.png' },
     { url: '/assets/logo_small.png' },
     { url: '/assets/logo.png' },

@@ -1,7 +1,7 @@
 const appConfig = {
     entry: './src/index.tsx',
     output: {
-        path: __dirname + '/public/build',
+        path: __dirname + '/public',
         filename: 'index.js',
     },
     resolve: {
@@ -52,7 +52,7 @@ const appConfig = {
 const serviceWorkerConfig = {
     entry: './src/service-worker.ts',
     output: {
-        path: __dirname + '/public/build',
+        path: __dirname + '/public',
         filename: 'service-worker.js',
     },
     resolve: {
