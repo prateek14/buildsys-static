@@ -138,3 +138,5 @@ const HeaderHamburger: React.FunctionComponent<{
         </div>
     );
 };
+
+export default Header;
