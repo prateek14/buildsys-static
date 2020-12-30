@@ -15,6 +15,8 @@
 
         &:last-child {
             margin-right: 0;
+            flex: 0 0 calc(34% - 16px);
+            width: calc(34% - 16px);
         }
 
         >div {
@@ -44,6 +46,34 @@
     }
 }
 
+.currency-widget {
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 auto;
+    font-size: 14px;
+    font-weight: 700;
+
+    >span {
+        width: 38px;
+        padding: 0 7px;
+        margin: 8px 0;
+        cursor: pointer;
+        margin-right: 2px;
+        color: #a1a4a6;
+        border-right: solid 1px #a1a4a6;
+
+        &.active {
+            color: black;
+        }
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+}
+
 .pricing-mobile {
     .pricing-container {
         display: flex;
@@ -65,7 +95,6 @@
     display: flex;
 
     .left-cont {
-        min-height: 300px;
         flex: 0 0 calc(42% - 72px);
         background-color: #c6def0;
         padding: 36px;
@@ -74,8 +103,35 @@
     }
 
     .right-cont {
-        flex: 0 0 calc(58% - 72px);
+        flex: 0 0 calc(58% - 128px);
         background-color: #f8f6f0;
-        padding: 36px;
+        padding: 18px 64px;
+
+        .account-type {
+            border-bottom: solid 2px #cdcdcd;
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+
+        .account-type-info {
+            flex: 0 0 50%;
+            width: 50%;
+        }
+
+        .account-type-price {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #ffcb02;
+            border-radius: 42px;
+            height: 40px;
+            width: 160px;
+
+            &.active {
+                background-color: #ffcb02;
+            }
+        }
     }
 }

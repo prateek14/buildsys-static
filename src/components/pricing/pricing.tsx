@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { useMediaPredicate } from 'react-media-hook';
 import { Dictionary } from '../../abstract/interfaces';
 import { useTitle } from '../../utils/common';
@@ -20,7 +20,6 @@ interface PricingSlab {
         | {
               annual: number;
               monthly?: number;
-              currency: string;
           };
     constraints: string[];
     featureText: string;
@@ -29,6 +28,8 @@ interface PricingSlab {
 
 export const Currencies: Dictionary<Currency> = {
     USD: { text: 'USD', coeff: 0.0133, symbol: '$' },
+    INR: { text: 'INR', coeff: 1, symbol: '₹' },
+    GBP: { text: 'GBP', coeff: 0.010212418, symbol: '£' },
 };
 
 export const Pricing: React.FunctionComponent = (): JSX.Element => {
@@ -45,12 +46,15 @@ export const Pricing: React.FunctionComponent = (): JSX.Element => {
 
 export const PricingContainer: React.FunctionComponent = (): JSX.Element => {
     const isMobile = useMediaPredicate('(max-width: 979px)');
+    const [currencyId, setCurrency] = useState('INR');
+    const currency = Currencies[currencyId];
+
     const slabs: PricingSlab[] = [
         {
             title: 'Basic',
             desc: 'Drawings & document management',
             color: '#212121',
-            price: { annual: 17, currency: 'USD', monthly: 20 },
+            price: { annual: Math.round(1250 * currency.coeff), monthly: Math.round(1500 * currency.coeff) },
             constraints: ['Up to 25 Creators', 'Up to 100 videos & screenshots', 'Up to 5 mins recording length'],
             featureText: 'Key Features',
             features: ['Drawings', 'Meetings', 'Files', 'Photos', 'Tasks'],
@@ -59,7 +63,7 @@ export const PricingContainer: React.FunctionComponent = (): JSX.Element => {
             title: 'Pro',
             desc: 'Workflows & integrations',
             color: '#ffcb02',
-            price: { annual: 28, currency: 'USD', monthly: 33 },
+            price: { annual: Math.round(2083 * currency.coeff), monthly: Math.round(2500 * currency.coeff) },
             constraints: ['Up to 25 Creators', 'Up to 100 videos & screenshots', 'Up to 5 mins recording length'],
             featureText: 'Everything in Basic, plus',
             features: ['RFIs', 'Submittals', 'Custom Forms', 'Integrations'],
@@ -68,20 +72,32 @@ export const PricingContainer: React.FunctionComponent = (): JSX.Element => {
             title: 'Enterprise',
             desc: 'Advanced admin & security',
             color: '#3079cd',
-            price: { annual: 56, currency: 'USD', monthly: 67 },
+            price: { annual: Math.round(4167 * currency.coeff), monthly: Math.round(5000 * currency.coeff) },
             constraints: ['Up to 25 Creators', 'Up to 100 videos & screenshots', 'Up to 5 mins recording length'],
             featureText: 'Everything in Pro, plus',
             features: ['SSO (SAML)', 'API Access'],
         },
     ];
+
     return (
         <FullWidthPanel backgroundColor="#f8f6f0">
-            <h2 className="text-center">Choose the plan that’s right for you or your team.</h2>
-            <br />
-            <div className={isMobile ? 'pricing-mobile' : ''}>
+            <h2 className="text-center">Choose the plan that’s right for you &amp; your team.</h2>
+
+            <div className={isMobile ? 'flex-column pricing-mobile' : 'flex-column'}>
+                <div className="currency-widget text-center">
+                    {Object.keys(Currencies).map((key, i) => {
+                        const curr = Currencies[key];
+                        const isActive = key === currencyId;
+                        return (
+                            <span onClick={() => setCurrency(key)} className={isActive ? 'active' : ''} key={i}>
+                                {curr.text}
+                            </span>
+                        );
+                    })}
+                </div>
                 <div className="pricing-container">
                     {slabs.map((v, i) => (
-                        <PricingPanel key={i} slab={v}></PricingPanel>
+                        <PricingPanel key={i} slab={v} currency={currency}></PricingPanel>
                     ))}
                 </div>
             </div>
@@ -89,17 +105,18 @@ export const PricingContainer: React.FunctionComponent = (): JSX.Element => {
     );
 };
 
-export const PricingPanel: React.FunctionComponent<{ slab: PricingSlab }> = ({
+export const PricingPanel: React.FunctionComponent<{ slab: PricingSlab; currency: Currency }> = ({
     slab,
+    currency,
 }: {
     slab: PricingSlab;
+    currency: Currency;
 }): JSX.Element => {
     let isStringPrice = true;
     let annualPrice = '';
     let monthlyPrice = '';
     if (slab.price instanceof Object) {
         isStringPrice = false;
-        const currency = Currencies[slab.price.currency];
         annualPrice = currency.symbol + slab.price.annual;
         monthlyPrice = currency.symbol + slab.price.monthly;
     }
@@ -164,11 +181,43 @@ export const OnlyContributorsContainer: React.FunctionComponent = (): JSX.Elemen
                     <div className="flex-column left-cont">
                         <h3>You only pay for Contributors</h3>
                         <div>
-                            It takes two (or more) to communicate with Loom. One person creates a video message and
-                            others watch, share, and react to it. We only charge for the people who create videos.
+                            Buildsys has different kinds of accounts for members of your team - Contributors &amp;
+                            Readers. Contributors can create new drawings, tasks, meetings, RFIs etc. However, Readers
+                            can only view and comment on existing data on Buildsys. We only charge for the people who
+                            create or upload data to Buildsys.
                         </div>
                     </div>
-                    <div className="flex-column right-cont"></div>
+                    <div className="flex-column flex-justify-center right-cont">
+                        <div className="bg-offwhite px-24 py-6 flex-grow md:px-36 md:py-18 lg:px-64">
+                            <div className="account-type flex-center flex-justify pv-18">
+                                <div className="account-type-info">
+                                    <h4>Admin accounts</h4>
+                                    <div className="text-14">Have full access to all available features</div>
+                                </div>
+                                <p className="account-type-price active text-14">Paid</p>
+                            </div>
+                            <div className="account-type flex-center flex-justify pv-18">
+                                <div className="account-type-info">
+                                    <h4>Contributor accounts</h4>
+                                    <div className="text-14">
+                                        Can upload drawings, files &amp; photos and can create tasks, meetings, RFIs,
+                                        submittals and forms.
+                                    </div>
+                                </div>
+                                <p className="account-type-price active text-14">Paid</p>
+                            </div>
+                            <div className="account-type flex-center flex-justify pv-18">
+                                <div className="account-type-info">
+                                    <h4>Reader accounts</h4>
+                                    <div className="text-14">
+                                        Can view and comment on uploaded drawings, files, photos, tasks, RFIs,
+                                        submittals and forms.
+                                    </div>
+                                </div>
+                                <p className="account-type-price text-14">Free</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </FullWidthPanel>
