@@ -1,15 +1,31 @@
 .App {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 17px;
+    line-height: 1.4;
     letter-spacing: 0px;
     font-weight: 400;
 
-    h3 {
+    h1 {
         font-size: 60px;
         line-height: 65px;
         letter-spacing: 3px;
         font-weight: 700;
         margin: 30px 0;
+    }
+
+    h2 {
+        font-size: 36px;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 12px;
+        line-height: 43px;
+        letter-spacing: -1px;
+    }
+
+    h3 {
+        font-size: 32px;
+        font-weight: 700;
+        margin: 0;
+        line-height: 48px;
     }
 
     h4 {
@@ -18,6 +34,39 @@
         letter-spacing: 0px;
         font-weight: 700;
         margin-bottom: 20px;
+    }
+
+    .text-28 {
+        font-size: 28px;
+    }
+
+    .text-14 {
+        font-size: 14px;
+        line-height: 1.2;
+    }
+
+    .text-16 {
+        font-size: 16px;
+    }
+
+    .text-42 {
+        font-size: 42px;
+    }
+
+    .text-bold {
+        font-weight: 700;
+    }
+
+    .text-grey {
+        color: #21212188;
+    }
+
+    .pl-8 {
+        padding-left: 8px;
+    }
+
+    .mt-24 {
+        margin-top: 24px;
     }
 
     a {
@@ -34,5 +83,62 @@
                 text-decoration: none;
             }
         }
+    }
+
+    a.lm-button-primary {
+        cursor: pointer;
+        color: white;
+        font-size: 18px;
+        letter-spacing: -0.18px;
+        line-height: 1.3;
+        border-radius: 6px;
+        padding: 16px 20px;
+        font-weight: 700;
+        position: relative;
+        display: block;
+        background: #3079cd;
+
+        &:not(:disabled) {
+            :hover {
+                transform: scale(1.05);
+                background: #625df5;
+            }
+
+            &:hover,
+            &:active,
+            &:focus {
+                color: white;
+                transform: scale(1.05);
+                background: #625df5;
+            }
+        }
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .flex-center {
+        display: flex;
+        align-items: center;
+    }
+
+    .flex-justify {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .flex-justify-center {
+        display: flex;
+        justify-content: center;
+    }
+
+    .flex-column {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .text-center {
+        text-align: center;
     }
 }

@@ -2,6 +2,7 @@ import React, { useLayoutEffect } from 'react';
 import { Switch, Route, useLocation } from 'react-router-dom';
 import { NotFound } from './components/404/404';
 import { Default } from './components/default/default';
+import { Pricing } from './components/pricing/pricing';
 import { Terms, Privacy } from './components/terms/terms';
 import { LoremIpsum } from './constants';
 import { useTitle } from './utils/common';
@@ -27,6 +28,7 @@ export const Routes: React.FunctionComponent = () => {
             <Route exact path="/what" component={func('What we do')} />
             <Route exact path="/who" component={func('We work with')} />
             <Route exact path="/us" component={func('About Us')} />
+            <Route exact path="/pricing" component={Pricing} />
             <Route exact path="/contact" component={func('Contact Us')} />
             <Route exact path="/terms" component={Terms} />
             <Route exact path="/privacy-notice" component={Privacy} />
