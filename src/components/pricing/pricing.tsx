@@ -55,7 +55,7 @@ export const PricingContainer: React.FunctionComponent = (): JSX.Element => {
             desc: 'Drawings & document management',
             color: '#212121',
             price: { annual: Math.round(1250 * currency.coeff), monthly: Math.round(1500 * currency.coeff) },
-            constraints: ['Up to 25 Creators', 'Up to 100 videos & screenshots', 'Up to 5 mins recording length'],
+            constraints: ['Up to 25 Contributors', 'Up to 1000 Drawings', 'Unlimited Projects'],
             featureText: 'Key Features',
             features: ['Drawings', 'Meetings', 'Files', 'Photos', 'Tasks'],
         },
@@ -64,7 +64,7 @@ export const PricingContainer: React.FunctionComponent = (): JSX.Element => {
             desc: 'Workflows & integrations',
             color: '#ffcb02',
             price: { annual: Math.round(2083 * currency.coeff), monthly: Math.round(2500 * currency.coeff) },
-            constraints: ['Up to 25 Creators', 'Up to 100 videos & screenshots', 'Up to 5 mins recording length'],
+            constraints: ['Up to 100 Contributors', 'Unlimited Drawings', 'Unlimited Projects'],
             featureText: 'Everything in Basic, plus',
             features: ['RFIs', 'Submittals', 'Custom Forms', 'Integrations'],
         },
@@ -73,7 +73,7 @@ export const PricingContainer: React.FunctionComponent = (): JSX.Element => {
             desc: 'Advanced admin & security',
             color: '#3079cd',
             price: { annual: Math.round(4167 * currency.coeff), monthly: Math.round(5000 * currency.coeff) },
-            constraints: ['Up to 25 Creators', 'Up to 100 videos & screenshots', 'Up to 5 mins recording length'],
+            constraints: ['Unlimited Contributors', 'Unlimited Drawings', 'Unlimited Projects'],
             featureText: 'Everything in Pro, plus',
             features: ['SSO (SAML)', 'API Access'],
         },
@@ -181,8 +181,8 @@ export const OnlyContributorsContainer: React.FunctionComponent = (): JSX.Elemen
                     <div className="flex-column left-cont">
                         <h3>You only pay for Contributors</h3>
                         <div>
-                            Buildsys has different kinds of accounts for members of your team - Contributors &amp;
-                            Readers. Contributors can create new drawings, tasks, meetings, RFIs etc. However, Readers
+                            Buildsys has different kinds of accounts for members of your team - Admins, Contributors &amp;
+                            Readers. Admins &amp; Contributors can create new drawings, tasks, meetings, RFIs etc. However, Readers
                             can only view and comment on existing data on Buildsys. We only charge for the people who
                             create or upload data to Buildsys.
                         </div>
