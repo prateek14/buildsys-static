@@ -4,6 +4,7 @@ import { Dictionary } from '../../abstract/interfaces';
 import { useTitle } from '../../utils/common';
 import { FullWidthPanel } from '../common/full-width-panel';
 import './pricing.scss';
+import { LoremIpsum } from '../../constants';
 
 interface Currency {
     text: string;
@@ -40,6 +41,11 @@ export const Pricing: React.FunctionComponent = (): JSX.Element => {
         <Fragment>
             <PricingContainer></PricingContainer>
             <OnlyContributorsContainer></OnlyContributorsContainer>
+            <ComparePlans></ComparePlans>
+            <div>
+                <p>{LoremIpsum}</p>
+                <p>{LoremIpsum}</p>
+            </div>
         </Fragment>
     );
 };
@@ -161,10 +167,7 @@ export const PricingPanel: React.FunctionComponent<{ slab: PricingSlab; currency
                         <div key={i}>{v}</div>
                     ))}
                 </div>
-                <a
-                    className="lm-button-primary text-center mt-24"
-                    href="https://www.loom.com/signup"
-                    id="basic-plan-card-button">
+                <a className="lm-button-primary text-center mt-24" href="/contact" id="basic-plan-card-button">
                     Contact Sales
                 </a>
             </div>
@@ -181,10 +184,10 @@ export const OnlyContributorsContainer: React.FunctionComponent = (): JSX.Elemen
                     <div className="flex-column left-cont">
                         <h3>You only pay for Contributors</h3>
                         <div>
-                            Buildsys has different kinds of accounts for members of your team - Admins, Contributors &amp;
-                            Readers. Admins &amp; Contributors can create new drawings, tasks, meetings, RFIs etc. However, Readers
-                            can only view and comment on existing data on Buildsys. We only charge for the people who
-                            create or upload data to Buildsys.
+                            Buildsys has different kinds of accounts for members of your team - Admins, Contributors
+                            &amp; Readers. Admins &amp; Contributors can create new drawings, tasks, meetings, RFIs etc.
+                            However, Readers can only view and comment on existing data on Buildsys. We only charge for
+                            the people who create or upload data to Buildsys.
                         </div>
                     </div>
                     <div className="flex-column flex-justify-center right-cont">
@@ -221,5 +224,157 @@ export const OnlyContributorsContainer: React.FunctionComponent = (): JSX.Elemen
                 </div>
             </div>
         </FullWidthPanel>
+    );
+};
+
+export const ComparePlans: React.FunctionComponent = (): JSX.Element => {
+    const isMobile = useMediaPredicate('(max-width: 979px)');
+    if (isMobile) {
+        return <Fragment></Fragment>;
+    }
+    return (
+        <div className="compare-plans-container">
+            <article>
+                <table className="sticky">
+                    <thead>
+                        <tr>
+                            <th className="hide"></th>
+                            <th className="bg-purple">Self-Employed</th>
+                            <th className="bg-blue">Simple Start</th>
+                            <th className="bg-blue default">Essentials</th>
+                            <th className="bg-blue">Plus</th>
+                        </tr>
+                    </thead>
+                </table>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Monthly price</td>
+                            <td>
+                                <span className="txt-l">6</span>
+                            </td>
+                            <td>
+                                <span className="txt-l">7</span>
+                            </td>
+                            <td className="default">
+                                <span className="txt-l">15</span>
+                            </td>
+                            <td>
+                                <span className="txt-l">25</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colSpan={5} className="sep">
+                                Get started easily
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Includes free updates and new features as they become available</td>
+                            <td>
+                                <span className="tick">&#10004;</span>
+                            </td>
+                            <td>
+                                <span className="tick">&#10004;</span>
+                            </td>
+                            <td className="default">
+                                <span className="tick">&#10004;</span>
+                            </td>
+                            <td>
+                                <span className="tick">&#10004;</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>No software to install — sign up online in moments</td>
+                            <td>
+                                <span className="tick">&#10004;</span>
+                            </td>
+                            <td>
+                                <span className="tick">&#10004;</span>
+                            </td>
+                            <td className="default">
+                                <span className="tick">&#10004;</span>
+                            </td>
+                            <td>
+                                <span className="tick">&#10004;</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Import customer &amp; supplier details from Excel, Outlook and .csv</td>
+                            <td></td>
+                            <td>
+                                <span className="tick">&#10004;</span>
+                            </td>
+                            <td className="default">
+                                <span className="tick">&#10004;</span>
+                            </td>
+                            <td>
+                                <span className="tick">&#10004;</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Accept card payments in QuickBooks Online</td>
+                            <td></td>
+                            <td>
+                                <span className="tick">&#10004;</span>
+                            </td>
+                            <td className="default">
+                                <span className="tick">&#10004;</span>
+                            </td>
+                            <td>
+                                <span className="tick">&#10004;</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colSpan={5} className="sep">
+                                Stay protected and get support
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Free telephone and online support</td>
+                            <td></td>
+                            <td>
+                                <span className="tick">&#10004;</span>
+                            </td>
+                            <td className="default">
+                                <span className="tick">&#10004;</span>
+                            </td>
+                            <td>
+                                <span className="tick">&#10004;</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Strong encryption protects your business data</td>
+                            <td>
+                                <span className="tick">&#10004;</span>
+                            </td>
+                            <td>
+                                <span className="tick">&#10004;</span>
+                            </td>
+                            <td className="default">
+                                <span className="tick">&#10004;</span>
+                            </td>
+                            <td>
+                                <span className="tick">&#10004;</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Automatic data backups</td>
+                            <td>
+                                <span className="tick">&#10004;</span>
+                            </td>
+                            <td>
+                                <span className="tick">&#10004;</span>
+                            </td>
+                            <td className="default">
+                                <span className="tick">&#10004;</span>
+                            </td>
+                            <td>
+                                <span className="tick">&#10004;</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </div>
     );
 };
