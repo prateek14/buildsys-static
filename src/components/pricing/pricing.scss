@@ -212,8 +212,7 @@
         text-align: left;
     }
 
-    td+td,
-    th+th {
+    td+td {
         text-align: center;
         display: none;
     }
@@ -232,7 +231,10 @@
 
     .sep {
         background: #F5F5F5;
-        font-weight: bold;
+    }
+
+    .empty {
+        border: 0;
     }
 
     .txt-l {
@@ -260,12 +262,6 @@
             display: table-cell !important;
         }
 
-        td,
-        th {
-            width: 330px;
-
-        }
-
         td+td,
         th+th {
             width: auto;
@@ -279,6 +275,9 @@
                     border-right-color: #DDDDDD;
                     border-bottom-color: #DDDDDD;
                 }
+
+                border-top: solid 10px;
+
             }
         }
     }
