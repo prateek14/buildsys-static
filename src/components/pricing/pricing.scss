@@ -90,7 +90,7 @@
 
 .contrib-container {
     width: 100%;
-    max-width: 1280px;
+    max-width: 1024px;
     margin: 64px auto;
     display: flex;
 
@@ -193,6 +193,7 @@
     th {
         background: #F5F5F5;
         display: none;
+        font-weight: normal;
     }
 
     td,
