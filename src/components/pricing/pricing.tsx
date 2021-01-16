@@ -693,32 +693,56 @@ export const ComparePlans: React.FunctionComponent<{ slabs: PricingSlab[] }> = (
     );
 };
 
+/*
+title: 'What are my payment options?',
+content: You can pay monthly or save 20% by choosing annual billing. We currently accept debit and credit payments but can accept alternative payment methods like ACH for Business or Enterprise plans if you email us at invoicing@loom.com. We charge per Workspace.
+
+
+title: 'How does the 5-minute recording limit on Starter work?
+You will see count down timer when you start recording. When the timer reaches 0 your recording will stop and create a 5-minute Loom video.
+
+
+
+title: 'What are Workspaces and who can I add to my Workspace?
+All our plans now include a Workspace with a Personal, Shared, and Team Library where you can create, edit, and organize videos and screenshots and collaborate with the rest of your team. You can invite people to your Workspace in your Workspace settings. You can invite up to 25 Creators on Starter, 100 Creators on Business, and unlimited Creators on Enterprise. Loom for Education is limited to 1 Creator. All plans have unlimited Viewers.
+
+
+How do Screenshots work?
+All our plans now include screenshots. If you take a screenshot, we'll generate an instantly shareable link, and the screenshot will live in its own section of your Workspace, just as regular videos in Loom do. Read more about how to take a screenshot here.
+
+Is there a free plan for Education?
+Yes. We have a dedicated free plan for teachers and students called Loom for Education. Learn more on how to get verified for a Loom for Education account here.
+
+What happened to the old plans?
+Loom introduced new plans to simplify our pricing and give our users more value. Learn more.
+*/
 export const FAQs: React.FunctionComponent = (): JSX.Element => {
     const data = {
         title: 'FAQs',
         rows: [
             {
-                title: 'Lorem ipsum dolor sit amet,',
-                content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor sem. Aenean vel turpis feugiat,
-                  ultricies metus at, consequat velit. Curabitur est nibh, varius in tellus nec, mattis pulvinar metus.
-                  In maximus cursus lorem, nec laoreet velit eleifend vel. Ut aliquet mauris tortor, sed egestas libero interdum vitae.
-                  Fusce sed commodo purus, at tempus turpis.`,
+                title: 'Can I start a free trial of paid plans?',
+                content: `Yes, you can try our Pro plan free for 14 days. 
+                Please contact sales for your free 14-day trial.`,
             },
             {
-                title: 'Nunc maximus, magna at ultricies elementum',
-                content:
-                    'Nunc maximus, magna at ultricies elementum, risus turpis vulputate quam, vitae convallis ex tortor sed dolor.',
+                title: 'What is the difference between monthly and annualy billing?',
+                content: `You can choose to pay monthly or save 16.7% by choosing annual billing. With annual billing, you make a one-time for 1 year of access to Buildsys. 
+                With monthly billing, payments are due in the first week of every month`,
             },
             {
-                title: 'Curabitur laoreet, mauris vel blandit fringilla',
-                content: `Curabitur laoreet, mauris vel blandit fringilla, leo elit rhoncus nunc, ac sagittis leo elit vel lorem.
-                Fusce tempor lacus ut libero posuere viverra. Nunc velit dolor, tincidunt at varius vel, laoreet vel quam.
-                Sed dolor urna, lobortis in arcu auctor, tincidunt mattis ante. Vivamus venenatis ultricies nibh in volutpat.
-                Cras eu metus quis leo vestibulum feugiat nec sagittis lacus.Mauris vulputate arcu sed massa euismod dignissim. `,
+                title: 'What happens when I hit my 1000 drawing limit on the Basic plan?',
+                content: `Our Basic plan has a limit of 1000 drawings. Once you hit the limit of 1000 drawings, you will not be able to upload new drawings. 
+                To upload more drawings, you will need to upgrade to either the Pro or the Enterprise plan.`,
             },
             {
-                title: 'What is the package version',
-                content: <p>current version is 1.2.1</p>,
+                title: 'What happens when I reach the Contributor limit on Basic or Pro?',
+                content: `When a your account reaches its limit you will no longer be able to add new Contributors. You will need to upgrade to add more Contributors.
+                However, you will be able to add unlimited Viewers to the account.`,
+            },
+            {
+                title: 'Do I get a refund if I deactivate members from my account?',
+                content: `We'll apply a prorated credit to your account for any paid members (Admins or Contributors) who are deactivated. This credit will be applied to future charges for your account.`,
             },
         ],
     };
