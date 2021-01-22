@@ -1,47 +1,15 @@
 import React, { useState } from 'react';
+import { Dictionary } from '../../abstract/interfaces';
+import { sendEmail } from '../../utils/common';
 import { ToastUtils } from '../../utils/toast';
+import { FormEntry, Form } from '../common/form';
 
 import './contact-form.scss';
 
-interface IDictionary<T> {
-    [key: string]: T;
-}
-
-interface PostBody {
-    email: string;
-    message: string;
-}
-
 export const ContactForm: React.FunctionComponent = (): JSX.Element => {
-    const [errors, setErrors] = useState<IDictionary<string>>({});
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        const target = event.target as HTMLFormElement;
-        const data = new FormData(target);
-        const nameValid = data.has('name') && (data.get('name') as string).trim();
-        const emailValid = data.has('email') && (data.get('email') as string).trim();
-        const messageValid = data.has('message') && (data.get('message') as string).trim();
-        const companyValid = data.has('company') && (data.get('company') as string).trim();
-
-        const errors: IDictionary<string> = {};
-        if (!nameValid) {
-            errors['name'] = 'This field cannot be blank.';
-        }
-        if (!emailValid) {
-            errors['email'] = 'This field cannot be blank.';
-        }
-        if (!messageValid) {
-            errors['message'] = 'This field cannot be blank.';
-        }
-        if (!companyValid) {
-            errors['company'] = 'This field cannot be blank.';
-        }
-
-        if (Object.keys(errors).length === 0) {
-        } else {
-            setErrors(errors);
-        }
-
-        const object: IDictionary<string> = {};
+    const [errors, setErrors] = useState<Dictionary<string>>({});
+    const handleSubmit = (data: FormData, target: HTMLFormElement) => {
+        const object: Dictionary<string> = {};
         data.forEach((value, key) => {
             object[key] = value as string;
         });
@@ -52,15 +20,7 @@ export const ContactForm: React.FunctionComponent = (): JSX.Element => {
         message += 'Company: ' + object['company'] + '\r\n';
         message += 'Message:\r\n ' + object['message'] + '\r\n';
 
-        const opts: PostBody = { email: 'hello@buildsys.co', message: message };
-
-        fetch('/api/sendEmail', {
-            method: 'post',
-            body: JSON.stringify(opts),
-        })
-            .then((response) => {
-                return response.json();
-            })
+        sendEmail(message)
             .then((data) => {
                 console.log(data);
                 ToastUtils.success('Message sent successfully.');
@@ -69,11 +29,41 @@ export const ContactForm: React.FunctionComponent = (): JSX.Element => {
             .catch(() => {
                 ToastUtils.error('Failed to submit message.');
             });
-
-        event.preventDefault();
     };
+
+    const formEntries: Dictionary<FormEntry> = {
+        name: {
+            type: 'text',
+            placeholder: 'Name',
+            label: 'Name',
+            required: true,
+        },
+        email: {
+            type: 'text',
+            placeholder: 'Name',
+            label: 'Name',
+            required: true,
+        },
+        company: {
+            type: 'text',
+            placeholder: 'Company',
+            label: 'Company',
+            required: true,
+        },
+        message: {
+            type: 'textarea',
+            placeholder: 'Message',
+            label: 'Message',
+            required: true,
+        },
+    };
+
     return (
-        <form className="contact-form frm-show-form frm_js_validate " onSubmit={handleSubmit}>
+        <Form
+            data={formEntries}
+            className="contact-form frm-show-form frm_js_validate"
+            onSubmit={handleSubmit}
+            onError={setErrors}>
             <div className="frm_form_fields ">
                 <div className="frm_fields_container">
                     <div
@@ -126,6 +116,6 @@ export const ContactForm: React.FunctionComponent = (): JSX.Element => {
                     </div>
                 </div>
             </div>
-        </form>
+        </Form>
     );
 };

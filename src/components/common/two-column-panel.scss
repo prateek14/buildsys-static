@@ -1,0 +1,26 @@
+.two-col {
+    margin: 0 -40px;
+    padding: 64px 100px;
+    justify-content: center;
+
+    &.tablet {
+        overflow: hidden;
+        flex-direction: column;
+
+        >* {
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    &.mobile {
+        overflow: hidden;
+
+        >* {
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}

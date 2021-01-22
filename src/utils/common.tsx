@@ -10,3 +10,17 @@ export const useTitle = (title: string): void => {
         };
     });
 };
+
+export interface PostBody {
+    email: string;
+    message: string;
+}
+
+export const sendEmail = async (message: string): Promise<unknown> => {
+    const opts: PostBody = { email: 'hello@buildsys.co', message: message };
+    const response = await fetch('/api/sendEmail', {
+        method: 'post',
+        body: JSON.stringify(opts),
+    });
+    return response.json();
+};
