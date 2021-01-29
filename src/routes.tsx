@@ -8,6 +8,7 @@ import { Terms, Privacy } from './components/terms/terms';
 import { LoremIpsum } from './constants';
 import { useTitle } from './utils/common';
 import { Demo } from './components/demo/demo';
+import { About } from './components/about/about';
 
 const func: (x: string) => React.FunctionComponent = (x: string) => {
     const A: React.FunctionComponent = () => {
@@ -28,7 +29,7 @@ export const Routes: React.FunctionComponent = () => {
         <Switch>
             <Route exact path="/" component={func('Home')} />
             <Route exact path="/product" component={func('Product')} />
-            <Route exact path="/us" component={func('About Us')} />
+            <Route exact path="/us" component={About} />
             <Route exact path="/pricing" component={Pricing} />
             <Route exact path="/support-center" component={Support} />
             <Route exact path="/schedule-demo" component={Demo} />
