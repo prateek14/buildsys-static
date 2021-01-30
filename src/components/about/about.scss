@@ -1,0 +1,45 @@
+.lgrid {
+    display: grid;
+    list-style: none;
+    padding: 0;
+
+    &.col-gap-24 {
+        column-gap: 24px;
+    }
+
+    &.row-gap-36 {
+        row-gap: 36px;
+    }
+
+    &.grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    img.profile {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+    }
+}
+
+.social-icons {
+    >a {
+        padding: 0 8px;
+
+        &:last-child {
+            padding-right: 0;
+        }
+
+        color: black;
+
+        &:hover,
+        &:active,
+        &:focus {
+
+            &,
+            span {
+                color: #3079cd;
+            }
+        }
+    }
+}
