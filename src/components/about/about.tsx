@@ -35,7 +35,7 @@ export const About: React.FunctionComponent = (): JSX.Element => {
                 padding="0px"
                 gutterWidth="0px"
                 gutterHeight="0px"
-                backgroundColor="#ffffff"
+                backgroundColor="#fefefe"
                 rightChildren={
                     !isTablet && (
                         <SinglePanel className="flex" width={colWidthRight}>
@@ -62,20 +62,33 @@ export const About: React.FunctionComponent = (): JSX.Element => {
                     </div>
                 </SinglePanel>
             </TwoColumnPanel>
-            <FullWidthPanel backgroundColor="#f8f6f0">
-                <SinglePanel width="calc(100vw - 18px - 512px)" padding="64px 256px">
-                    <h2 className="text-center">Our Leadership</h2>
-                    <LeadershipGrid></LeadershipGrid>
+            <Leadership></Leadership>
+            <FullWidthPanel backgroundColor="#fefefe">
+                <SinglePanel width="calc(100vw - 18px - 128px)" padding="64px 64px">
+                    <h2 className="text-center">Get in touch</h2>
                 </SinglePanel>
             </FullWidthPanel>
         </Fragment>
     );
 };
 
+export const Leadership: React.FunctionComponent = (): JSX.Element => {
+    const width = '100%';
+    const padding = '64px 0';
+    return (
+        <FullWidthPanel className="flex-center" backgroundColor="#f8f6f0">
+            <SinglePanel width={width} padding={padding}>
+                <h2 className="text-center">Our Leadership</h2>
+                <LeadershipGrid></LeadershipGrid>
+            </SinglePanel>
+        </FullWidthPanel>
+    );
+};
+
 export const LeadershipGrid: React.FunctionComponent = (): JSX.Element => {
     return (
         <Fragment>
-            <ul className="lgrid grid-cols-2 col-gap-24 row-gap-36">
+            <ul className="lgrid">
                 <li className="text-center">
                     <img className="profile" src="assets/profile/Yukti.jpg" />
                     <div>
