@@ -63,12 +63,65 @@ export const About: React.FunctionComponent = (): JSX.Element => {
                 </SinglePanel>
             </TwoColumnPanel>
             <Leadership></Leadership>
-            <FullWidthPanel backgroundColor="#fefefe">
-                <SinglePanel width="calc(100vw - 18px - 128px)" padding="64px 64px">
-                    <h2 className="text-center">Get in touch</h2>
-                </SinglePanel>
-            </FullWidthPanel>
+            <Contact></Contact>
         </Fragment>
+    );
+};
+
+export const Contact: React.FunctionComponent = (): JSX.Element => {
+    const width = '100%';
+    const padding = '64px 0';
+    const isTablet = useMediaPredicate('(max-width: 979px)');
+    const colWidth = isTablet ? 'calc(100vw - 64px)' : 'calc(50vw - 164px)';
+    const colPadding2 = isTablet ? '64px 64px' : '164px 64px 64px 100px';
+    const colWidthRight = 'calc(50vw - 9px)';
+    return (
+        <FullWidthPanel className="flex-center" backgroundColor="#fefefe">
+            <SinglePanel width={width} padding={padding}>
+                <TwoColumnPanel
+                    padding="0px"
+                    gutterWidth="64px"
+                    gutterHeight="0px"
+                    backgroundColor="transparent"
+                    rightChildren={
+                        <SinglePanel padding="64px 0">
+                            <h2>Get in touch</h2>
+                            <p className="text-20">
+                                6th Floor, Select CITYWALK <br />
+                                A-3 District Center, Saket
+                                <br />
+                                New Delhi 110017 India
+                            </p>
+                            <p className="text-20">
+                                <a href="mailto:hello@buildsys.co">hello@buildsys.co</a>
+                            </p>
+                            <p className="text-20">
+                                <a href="tel:+919999778225">+91 9999778225</a> <br />
+                                8:00 AM - 7:00 PM IST
+                            </p>
+                        </SinglePanel>
+                    }>
+                    {!isTablet && (
+                        <SinglePanel className="flex" width={colWidthRight}>
+                            <div className="mapouter">
+                                <div className="gmap_canvas">
+                                    <iframe
+                                        width="600"
+                                        height="400"
+                                        id="gmap_canvas"
+                                        src="https://maps.google.com/maps?q=Buildsys&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+                                        frameBorder="0"
+                                        scrolling="no"
+                                        marginHeight={0}
+                                        marginWidth={0}></iframe>
+                                    <br />
+                                </div>
+                            </div>
+                        </SinglePanel>
+                    )}
+                </TwoColumnPanel>
+            </SinglePanel>
+        </FullWidthPanel>
     );
 };
 
