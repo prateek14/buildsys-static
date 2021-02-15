@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 export const useTitle = (title: string): void => {
     title = title + ' | Buildsys - Construction Productivity App';
@@ -59,8 +60,8 @@ export const useWindowSize = (): { width?: number; height?: number } => {
 
 export const SalesButton: React.FunctionComponent = (): JSX.Element => {
     return (
-        <a className="lm-button-primary text-center mt-24" href="/schedule-demo" id="basic-plan-card-button">
+        <NavLink className="lm-button-primary text-center mt-24" to="/schedule-demo" id="basic-plan-card-button">
             Schedule Demo
-        </a>
+        </NavLink>
     );
 };
