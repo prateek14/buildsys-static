@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import React from 'react';
 
 export const useTitle = (title: string): void => {
     title = title + ' | Buildsys - Construction Productivity App';
@@ -54,4 +55,12 @@ export const useWindowSize = (): { width?: number; height?: number } => {
     }, []); // Empty array ensures that effect is only run on mount
 
     return windowSize;
+};
+
+export const SalesButton: React.FunctionComponent = (): JSX.Element => {
+    return (
+        <a className="lm-button-primary text-center mt-24" href="/schedule-demo" id="basic-plan-card-button">
+            Schedule Demo
+        </a>
+    );
 };

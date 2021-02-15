@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { useMediaPredicate } from 'react-media-hook';
 import { Dictionary } from '../../abstract/interfaces';
-import { useTitle } from '../../utils/common';
+import { SalesButton, useTitle } from '../../utils/common';
 import { FullWidthPanel } from '../common/full-width-panel';
 import './pricing.scss';
 import Faq from 'react-faq-component';
@@ -555,14 +555,6 @@ export const PricingPanel: React.FunctionComponent<{ slab: PricingSlab }> = ({
                 <SalesButton></SalesButton>
             </div>
         </div>
-    );
-};
-
-export const SalesButton: React.FunctionComponent = (): JSX.Element => {
-    return (
-        <a className="lm-button-primary text-center mt-24" href="/contact" id="basic-plan-card-button">
-            Contact Sales
-        </a>
     );
 };
 

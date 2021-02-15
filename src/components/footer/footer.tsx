@@ -99,7 +99,7 @@ export const FooterSecondary: React.FunctionComponent = (): JSX.Element => {
                     </span>
                 </div>
                 <div className="footer_sub_center">
-                    <span>© 2020 Buildsys Software Pvt Ltd. All Rights Reserved.</span>
+                    <span>© 2021 Buildsys Software Pvt Ltd. All Rights Reserved.</span>
                 </div>
                 <div className="footer_sub_right">
                     <span className="footer-social-icons">

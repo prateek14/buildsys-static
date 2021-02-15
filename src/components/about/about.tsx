@@ -16,6 +16,9 @@ export const About: React.FunctionComponent = (): JSX.Element => {
 
     const colPadding2 = isTablet ? '64px 64px' : '164px 64px 64px 100px';
     const colWidthRight = 'calc(50vw - 9px)';
+    const imgWidth = 'calc(50vw - 9px - 48px)';
+    const imgMargin = '64px 24px';
+    const imgBorderRadius = '8px';
     return (
         <Fragment>
             <TwoColumnPanel
@@ -40,7 +43,7 @@ export const About: React.FunctionComponent = (): JSX.Element => {
                     !isTablet && (
                         <SinglePanel className="flex" width={colWidthRight}>
                             <img
-                                style={{ width: colWidthRight }}
+                                style={{ width: imgWidth, borderRadius: imgBorderRadius, margin: imgMargin }}
                                 src="/assets/hero/landscape-1.jpg"
                                 alt="Buildsys About Us"
                                 title="Buildsys About Us"
@@ -72,8 +75,8 @@ export const Contact: React.FunctionComponent = (): JSX.Element => {
     const width = '100%';
     const padding = '64px 0';
     const isTablet = useMediaPredicate('(max-width: 979px)');
-    const colWidth = isTablet ? 'calc(100vw - 64px)' : 'calc(50vw - 164px)';
-    const colPadding2 = isTablet ? '64px 64px' : '164px 64px 64px 100px';
+    // const colWidth = isTablet ? 'calc(100vw - 64px)' : 'calc(50vw - 164px)';
+    // const colPadding2 = isTablet ? '64px 64px' : '164px 64px 64px 100px';
     const colWidthRight = 'calc(50vw - 9px)';
     return (
         <FullWidthPanel className="flex-center" backgroundColor="#fefefe">
@@ -148,10 +151,10 @@ export const LeadershipGrid: React.FunctionComponent = (): JSX.Element => {
                         <div className="text-20 text-bold">Yukti Arora</div>
                         <div>CPO &amp; Co-founder</div>
                         <div className="social-icons">
-                            <a href="https://www.linkedin.com/in/yukti-arora-2770b03a" target="_blank">
+                            <a href="https://www.linkedin.com/in/yukti-arora-2770b03a" target="_blank" rel="noreferrer">
                                 <FaLinkedin />
                             </a>
-                            <a href="https://www.instagram.com/yukiarora/" target="_blank">
+                            <a href="https://www.instagram.com/yukiarora/" target="_blank" rel="noreferrer">
                                 <FaInstagram />
                             </a>
                         </div>
@@ -163,10 +166,10 @@ export const LeadershipGrid: React.FunctionComponent = (): JSX.Element => {
                         <div className="text-20 text-bold">Prateek Arora</div>
                         <div>CTO &amp; Co-founder</div>
                         <div className="social-icons">
-                            <a href="https://www.linkedin.com/in/patarora/" target="_blank">
+                            <a href="https://www.linkedin.com/in/patarora/" target="_blank" rel="noreferrer">
                                 <FaLinkedin />
                             </a>
-                            <a href="https://twitter.com/prateek_arora_1" target="_blank">
+                            <a href="https://twitter.com/prateek_arora_1" target="_blank" rel="noreferrer">
                                 <FaTwitter />
                             </a>
                         </div>

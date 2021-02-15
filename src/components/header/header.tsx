@@ -85,11 +85,11 @@ const HeaderNav: React.FunctionComponent<{ onClick?: () => void }> = ({
                         <span>Home</span>
                     </NavLink>
                 </li>
-                <li>
+                {/* <li>
                     <NavLink onClick={onClick} to="/product" activeClassName="active">
                         <span>Product</span>
                     </NavLink>
-                </li>
+                </li> */}
                 <li>
                     <NavLink onClick={onClick} to="/pricing" activeClassName="active">
                         <span>Pricing</span>
@@ -104,6 +104,11 @@ const HeaderNav: React.FunctionComponent<{ onClick?: () => void }> = ({
                     <NavLink onClick={onClick} to="/schedule-demo" activeClassName="active">
                         <span>Schedule Demo</span>
                     </NavLink>
+                </li>
+                <li>
+                    <a href="https://app.buildsys.co" target="_blank" rel="noreferrer">
+                        <span>Login</span>
+                    </a>
                 </li>
             </ul>
         </nav>
