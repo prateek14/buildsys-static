@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import { useMediaPredicate } from 'react-media-hook';
 import { Dictionary } from '../../abstract/interfaces';
 import { sendEmail, useTitle } from '../../utils/common';
 import { ToastUtils } from '../../utils/toast';
@@ -79,15 +80,19 @@ export const Demo: React.FunctionComponent = (): JSX.Element => {
             });
     };
 
+    const isTablet = useMediaPredicate('(max-width: 979px)');
+    const colPadding = isTablet ? '64px 24px' : '64px 100px';
+
     return (
         <Fragment>
             <TwoColumnPanel
                 gutterWidth="72px"
                 gutterHeight="64px"
                 backgroundColor="#f8f6f0"
+                padding={colPadding}
                 rightChildren={
                     <SinglePanel>
-                        <div>
+                        <div style={{ maxWidth: '500px' }}>
                             <div className="demo-form">
                                 <h2 className="text-center">Schedule a Demo</h2>
                                 <p className="text-center">All demos come with a free 15 day trial.</p>
@@ -107,7 +112,7 @@ export const Demo: React.FunctionComponent = (): JSX.Element => {
                         </div>
                     </SinglePanel>
                 }>
-                <SinglePanel>
+                <SinglePanel className="buildsys-in-action">
                     <h1>See Buildsys in Action</h1>
                     <p className="text-20">Schedule a personalized demo today</p>
                     <hr className="buildsys"></hr>
@@ -117,10 +122,7 @@ export const Demo: React.FunctionComponent = (): JSX.Element => {
                         <li>Document control that is simple, trackable and accountable</li>
                         <li> One updated workspace for your team</li>
                     </ul>
-                    <img
-                        src="https://specials-images.forbesimg.com/imageserve/5c0077cc31358e5b43383ffc/960x0.jpg?fit=scale"
-                        style={{ maxWidth: '500px', borderRadius: '15px' }}
-                    />
+                    <img src="/assets/hero/demo1.jpg" style={{ maxWidth: '500px', borderRadius: '15px' }} />
                 </SinglePanel>
             </TwoColumnPanel>
         </Fragment>
