@@ -19,7 +19,7 @@ export default function Home(): ReactElement {
                 gutterWidth="0px"
                 gutterHeight="0px"
                 backgroundColor="#ffffff"
-                background="url('https://images.pexels.com/photos/2138126/pexels-photo-2138126.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260') 0px -300px no-repeat"
+                background="url('/assets/hero/home1.jpeg') 0px -300px no-repeat"
                 rightChildren={
                     !isTablet && (
                         <SinglePanel
