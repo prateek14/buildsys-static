@@ -45,7 +45,7 @@ export default function Home(): ReactElement {
                 padding="0"
                 gutterWidth="0px"
                 gutterHeight="0px"
-                backgroundColor="#ffffff"
+                backgroundColor="#f8f6f0"
                 rightChildren={
                     <SinglePanel
                         className="home-panel-1 flex-column"
@@ -80,7 +80,7 @@ export default function Home(): ReactElement {
                     className="home-panel-1 flex-column"
                     width={colWidth}
                     padding={colPadding2}
-                    backgroundColor="#f8f6f0">
+                    backgroundColor="#ffffff">
                     <h1 className="text-48">Save time spent on rework and coordination.</h1>
                     <p className="text-20">
                         Buildsys helps cuts through the clutter and follow up cycles, surfacing what matters the most.
@@ -105,7 +105,7 @@ export default function Home(): ReactElement {
                 padding="0"
                 gutterWidth="0px"
                 gutterHeight="0px"
-                backgroundColor="#ffffff"
+                backgroundColor="#f8f6f0"
                 rightChildren={
                     <SinglePanel
                         className="home-panel-1 flex-column"
