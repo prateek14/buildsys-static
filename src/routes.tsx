@@ -10,6 +10,7 @@ import { useTitle } from './utils/common';
 import { Demo } from './components/demo/demo';
 import { About } from './components/about/about';
 import Home from './components/home/home';
+import { Blog, BlogItem } from './components/blog/blog';
 
 const func: (x: string) => React.FunctionComponent = (x: string) => {
     const A: React.FunctionComponent = () => {
@@ -36,6 +37,8 @@ export const Routes: React.FunctionComponent = () => {
             <Route exact path="/schedule-demo" component={Demo} />
             <Route exact path="/terms" component={Terms} />
             <Route exact path="/privacy-notice" component={Privacy} />
+            <Route path="/blog/:id" component={BlogItem} />
+            <Route exact path="/blog" component={Blog} />
             <Route component={NotFound} />
         </Switch>
     );

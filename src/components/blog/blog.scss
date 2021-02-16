@@ -1,0 +1,60 @@
+.post-item {
+    overflow: hidden;
+
+    img {
+        max-width: 100%;
+    }
+
+    .date {
+        font-size: 16px;
+        color: #777;
+        margin-bottom: 12px;
+    }
+}
+
+a.post-list-item {
+    display: block;
+    margin: 24px 0;
+    padding-bottom: 24px;
+    border-bottom: solid 2px;
+    border-color: rgb(255, 203, 2);
+    text-decoration: none;
+    color: black;
+    overflow: hidden;
+
+    &:hover,
+    &:active,
+    &:focus {
+
+        &,
+        span {
+            color: black;
+            text-decoration: none;
+
+            .title {
+                text-decoration: underline;
+            }
+        }
+
+    }
+
+    .image {
+        img {
+            max-width: 100%;
+        }
+    }
+
+    .title {
+        font-size: 36px;
+        line-height: 1.1;
+        font-weight: 700;
+        margin: 12px 0;
+        letter-spacing: -1px;
+    }
+
+    .date {
+        font-size: 14px;
+        color: #777;
+        margin-bottom: 12px;
+    }
+}

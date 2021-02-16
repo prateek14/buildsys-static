@@ -56,7 +56,7 @@ const HeaderLogo: React.FunctionComponent = (): JSX.Element => {
             <Link to="/" className="logo-img-anchor">
                 <img
                     className="logo-img"
-                    src="assets/logo_big.png"
+                    src="/assets/logo_big.png"
                     alt="Buildsys Logo"
                     title="Buildsys"
                     width="180"
@@ -103,6 +103,11 @@ const HeaderNav: React.FunctionComponent<{ onClick?: () => void }> = ({
                 <li>
                     <NavLink onClick={onClick} to="/schedule-demo" activeClassName="active">
                         <span>Schedule Demo</span>
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink onClick={onClick} to="/blog" activeClassName="active">
+                        <span>Blog</span>
                     </NavLink>
                 </li>
                 <li>
