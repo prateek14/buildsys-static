@@ -7,10 +7,10 @@
 
     h1 {
         font-size: 60px;
-        line-height: 65px;
-        letter-spacing: 3px;
+        line-height: 1.1;
         font-weight: 700;
         margin: 30px 0;
+        letter-spacing: -1px;
     }
 
     h2 {
@@ -62,6 +62,14 @@
         font-size: 42px;
     }
 
+    .text-48 {
+        font-size: 48px;
+    }
+
+    .text-66 {
+        font-size: 66px;
+    }
+
     .text-bold {
         font-weight: 700;
     }
@@ -98,6 +106,10 @@
     }
 
     .mt-24 {
+        margin-top: 24px;
+    }
+
+    .pt-24 {
         margin-top: 24px;
     }
 
@@ -177,5 +189,15 @@
     hr.buildsys {
         border: solid 4px;
         border-color: rgb(255, 203, 2);
+    }
+
+    .funfact {
+        padding: 16px;
+        background-color: rgba(255, 238, 108, 0.8);
+        border-radius: 8px;
+
+        .funfact-text {
+            padding-left: 12px;
+        }
     }
 }

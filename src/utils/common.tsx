@@ -65,3 +65,15 @@ export const SalesButton: React.FunctionComponent = (): JSX.Element => {
         </NavLink>
     );
 };
+
+export const FunFact: React.FunctionComponent = (props: React.PropsWithChildren<{ stub?: number }>): JSX.Element => {
+    return (
+        <div className="flex funfact mt-24">
+            <div className="text-20">💡</div>
+            <div className="funfact-text">
+                <div>Fun Fact:</div>
+                {props.children}
+            </div>
+        </div>
+    );
+};

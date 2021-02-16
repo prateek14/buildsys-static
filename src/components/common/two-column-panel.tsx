@@ -3,7 +3,7 @@ import { useMediaPredicate } from 'react-media-hook';
 
 import './two-column-panel.scss';
 
-export type TwoColumnPanelProps = PropsWithChildren<{ backgroundColor: string }> & {
+export type TwoColumnPanelProps = PropsWithChildren<{ backgroundColor: string; background?: string }> & {
     gutterWidth?: string;
     gutterHeight?: string;
     padding?: string;
@@ -25,8 +25,8 @@ export const TwoColumnPanel: React.FunctionComponent<TwoColumnPanelProps> = (
         <div
             className={'two-col flex ' + className}
             style={{
-                backgroundColor: props.backgroundColor,
-                padding: props.padding || '64px 100px'
+                background: props.background || props.backgroundColor,
+                padding: props.padding || '64px 100px',
             }}>
             <div className="col-1">{props.children}</div>
             <div className="col-2" style={col2Style}>

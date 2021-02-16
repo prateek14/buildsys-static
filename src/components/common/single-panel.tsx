@@ -6,6 +6,7 @@ export const SinglePanel: React.FunctionComponent<
         width?: string;
         padding?: string;
         backgroundColor?: string;
+        background?: string;
         className?: string;
     }>
 > = (
@@ -13,6 +14,7 @@ export const SinglePanel: React.FunctionComponent<
         width?: string;
         padding?: string;
         backgroundColor?: string;
+        background?: string;
         className?: string;
     }>,
 ): JSX.Element => {
@@ -20,6 +22,7 @@ export const SinglePanel: React.FunctionComponent<
         <div
             className={'single-panel ' + props.className}
             style={{
+                background: props.background || 'none',
                 backgroundColor: props.backgroundColor || 'transparent',
                 padding: props.padding || '0px',
                 width: props.width || '500px',
