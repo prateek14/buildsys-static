@@ -24,8 +24,8 @@ export const SinglePanel: React.FunctionComponent<
             style={{
                 background: props.background || 'none',
                 backgroundColor: props.backgroundColor || 'transparent',
-                padding: props.padding || '0px',
-                width: props.width || '500px',
+                padding: props.padding || undefined,
+                width: props.width || undefined,
             }}>
             {props.children}
         </div>

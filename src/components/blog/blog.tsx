@@ -73,17 +73,20 @@ export const Blog: React.FunctionComponent = (): JSX.Element => {
 export const PostList: React.FunctionComponent<{
     onTagChange: (tag: string) => void;
     items: BlogPost[];
-}> = (props: { items: BlogPost[] }): JSX.Element => {
+}> = (props: { onTagChange: (tag: string) => void; items: BlogPost[] }): JSX.Element => {
     return (
-        <SinglePanel width="640px" padding="0 64px">
+        <SinglePanel className="blog-single-panel">
             {props.items.map((p, index) => (
-                <PostListItem key={index} item={p}></PostListItem>
+                <PostListItem onTagChange={props.onTagChange} key={index} item={p}></PostListItem>
             ))}
         </SinglePanel>
     );
 };
 
-export const PostListItem: React.FunctionComponent<{ item: BlogPost }> = (props: { item: BlogPost }): JSX.Element => {
+export const PostListItem: React.FunctionComponent<{
+    onTagChange: (tag: string) => void;
+    item: BlogPost;
+}> = (props: { onTagChange: (tag: string) => void; item: BlogPost }): JSX.Element => {
     const item = props.item;
     const date = Date.parse(item.date);
     let dateStr = '';
@@ -92,19 +95,29 @@ export const PostListItem: React.FunctionComponent<{ item: BlogPost }> = (props:
     }
     const hasTags = item.tags && item.tags.length > 0;
     return (
-        <Link className="post-list-item" to={'/blog/' + item.slug}>
-            <div className="flex-column">
-                {item.img && (
-                    <div className="image">
-                        <img src={item.img} />
-                    </div>
-                )}
-                <div className="title">{item.title}</div>
-                {!isNaN(date) && <div className="date">Published {dateStr}</div>}
-                {hasTags && <div className="tags"></div>}
-                <div className="byline">{item.description}</div>
-            </div>
-        </Link>
+        <div className="post-list-item flex-column">
+            <Link to={'/blog/' + item.slug}>
+                <div className="flex-column">
+                    {item.img && (
+                        <div className="image">
+                            <img src={item.img} />
+                        </div>
+                    )}
+                    <div className="title">{item.title}</div>
+                </div>
+            </Link>
+            {hasTags && (
+                <div className="tags">
+                    {item.tags.map((tag, index) => (
+                        <div className="text-14" onClick={() => props.onTagChange(tag)} key={index}>
+                            {tag}
+                        </div>
+                    ))}
+                </div>
+            )}
+            {!isNaN(date) && <div className="date">Published {dateStr}</div>}
+            <div className="byline">{item.description}</div>
+        </div>
     );
 };
 
@@ -132,7 +145,7 @@ export const BlogItem: React.FunctionComponent = (): JSX.Element => {
         <Fragment>
             {item && (
                 <FullWidthPanel className="flex-center" backgroundColor="#fefefe">
-                    <SinglePanel width="640px" padding="0 64px">
+                    <SinglePanel className="blog-single-panel">
                         <PostItem item={item}></PostItem>
                     </SinglePanel>
                 </FullWidthPanel>
@@ -161,6 +174,11 @@ export const PostItem: React.FunctionComponent<{ item: BlogPost }> = (props: { i
     }
     return (
         <div className="post-item">
+            {item.img && (
+                <div className="image">
+                    <img src={item.img} />
+                </div>
+            )}
             <h1>{item.title}</h1>
             {!isNaN(date) && <div className="date">Published {dateStr}</div>}
             <ReactMarkdown>{markdown}</ReactMarkdown>
