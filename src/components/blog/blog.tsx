@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Link, useParams } from 'react-router-dom';
+import { Dictionary } from '../../abstract/interfaces';
 import { useTitle } from '../../utils/common';
 import { NotFound } from '../404/404';
 import { FullWidthPanel } from '../common/full-width-panel';
@@ -14,17 +15,31 @@ interface BlogPost {
     description: string;
     date: string;
     img?: string;
+    tags: string[];
 }
 
 export const Blog: React.FunctionComponent = (): JSX.Element => {
     useTitle('Blog');
 
     const [items, setItems] = useState<BlogPost[]>([]);
+    const [tags, setTags] = useState<string[]>(['All']);
+    const [currentTag, setCurrentTag] = useState<string>('All');
 
     useEffect(() => {
         getBlogs()
             .then((items) => {
                 setItems(items);
+                const t: Dictionary<number> = {};
+                items.forEach((p) => {
+                    p.tags.forEach((tag) => {
+                        if (t[tag]) {
+                            t[tag]++;
+                        } else {
+                            t[tag] = 1;
+                        }
+                    });
+                });
+                setTags(['All', ...Object.keys(t).sort((a, b) => t[a] - t[b])]);
             })
             .catch((e) => {
                 console.log(e);
@@ -34,13 +49,31 @@ export const Blog: React.FunctionComponent = (): JSX.Element => {
         <Fragment>
             <FullWidthPanel className="flex-center" backgroundColor="#fefefe">
                 <h1>Blog</h1>
-                <PostList items={items}></PostList>
+
+                <div className="filter-tags">
+                    {tags.map((tag, index) => (
+                        <div
+                            onClick={() => setCurrentTag(tag)}
+                            className={currentTag === tag ? 'active' : ''}
+                            key={index}>
+                            {tag}
+                        </div>
+                    ))}
+                </div>
+                <PostList
+                    onTagChange={(tag) => setCurrentTag(tag)}
+                    items={items.filter(
+                        (i) => currentTag === 'All' || !!i.tags.find((t) => t === currentTag),
+                    )}></PostList>
             </FullWidthPanel>
         </Fragment>
     );
 };
 
-export const PostList: React.FunctionComponent<{ items: BlogPost[] }> = (props: { items: BlogPost[] }): JSX.Element => {
+export const PostList: React.FunctionComponent<{
+    onTagChange: (tag: string) => void;
+    items: BlogPost[];
+}> = (props: { items: BlogPost[] }): JSX.Element => {
     return (
         <SinglePanel width="640px" padding="0 64px">
             {props.items.map((p, index) => (
@@ -57,6 +90,7 @@ export const PostListItem: React.FunctionComponent<{ item: BlogPost }> = (props:
     if (!isNaN(date)) {
         dateStr = new Date(date).toDateString();
     }
+    const hasTags = item.tags && item.tags.length > 0;
     return (
         <Link className="post-list-item" to={'/blog/' + item.slug}>
             <div className="flex-column">
@@ -67,6 +101,7 @@ export const PostListItem: React.FunctionComponent<{ item: BlogPost }> = (props:
                 )}
                 <div className="title">{item.title}</div>
                 {!isNaN(date) && <div className="date">Published {dateStr}</div>}
+                {hasTags && <div className="tags"></div>}
                 <div className="byline">{item.description}</div>
             </div>
         </Link>

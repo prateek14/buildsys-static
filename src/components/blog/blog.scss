@@ -14,8 +14,8 @@
 
 a.post-list-item {
     display: block;
-    margin: 24px 0;
-    padding-bottom: 24px;
+    margin: 36px 0;
+    padding-bottom: 36px;
     border-bottom: solid 2px;
     border-color: rgb(255, 203, 2);
     text-decoration: none;
@@ -56,5 +56,23 @@ a.post-list-item {
         font-size: 14px;
         color: #777;
         margin-bottom: 12px;
+    }
+}
+
+.filter-tags {
+    display: none;
+
+    >div {
+        display: inline-block;
+        margin-right: 16px;
+        padding: 12px;
+        border-radius: 12px;
+        background-color: #ccc;
+        cursor: pointer;
+
+        &.active {
+            background-color: #3079cd;
+            color: white;
+        }
     }
 }
