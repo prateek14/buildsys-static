@@ -38,26 +38,54 @@ export const FooterMain: React.FunctionComponent = (): JSX.Element => {
         <div className="flex-center footer-main">
             <div className="flex-justify">
                 <div className="col">
-                    <div className="title">About Us</div>
+                    <div className="title">Company</div>
                     <div>
                         Buildsys is a construction productivity application that reduces paperwork and makes
                         field-to-office communication faster, trackable, and mobile. <br />
                         Buildsys works everywhere construction works, in the office, in the field and can be accessed
-                        from Web, iPad, iPhone and Android devices. <br />
-                        Buildsys helps project managers manage all data at one place. It provides real time access to
-                        information to all stakeholders right on their phone. Stakeholders can view plans, manage tasks,
-                        or create RFIs right from the construction site. Teams can digitize and automate workflows and
-                        processes for approvals, design queries and RFIs.{' '}
-                        <Link to="/us">Learn more about Buildsys</Link>
+                        from Web, iPad, iPhone and Android devices.
                         <p>
-                            <Link to="/terms">Terms of Use</Link>
+                            <Link to="/us">About Us</Link>
                         </p>
                         <p>
-                            <Link to="/privacy-notice">Privacy Policy</Link>
+                            <Link to="/us#contact">Contact Us</Link>
+                        </p>
+                        <p>
+                            <Link to="/blog">Blog</Link>
                         </p>
                     </div>
                 </div>
                 <div className="col">
+                    <div className="title">Product</div>
+                    <p>
+                        <Link to="/pricing">Pricing</Link>
+                    </p>
+                    <p>
+                        <Link to="/schedule-demo">Schedule Demo</Link>
+                    </p>
+                    <p>
+                        <Link to="/terms">Terms of Use</Link>
+                    </p>
+                    <p>
+                        <Link to="/privacy-notice">Privacy Policy</Link>
+                    </p>
+                    <p>
+                        <a href="https://app.buildsys.co" rel="noreferrer" target="_blank">
+                            Login
+                        </a>
+                    </p>
+                </div>
+                <div className="col">
+                    <div className="title">Contact</div>
+                    <div>
+                        <a href="mailto:hello@buildsys.co">hello@buildsys.co</a> <br />
+                        <br />
+                        <a href="tel:+911140599999">+91 11 40599999 </a> <br />
+                        <br />
+                        <a href="tel:+919999778225">+91 9999778225 </a> <br />
+                        <br />
+                    </div>
+                    <br />
                     <div className="title">Buildsys HQ</div>
                     <div>
                         6th Floor, Select CITYWALK <br />
@@ -67,15 +95,6 @@ export const FooterMain: React.FunctionComponent = (): JSX.Element => {
                         New Delhi 110017 <br />
                         <br />
                         India
-                    </div>
-                </div>
-                <div className="col">
-                    <div className="title">Contact</div>
-                    <div>
-                        <a href="mailto:media@buildsys.co">media@buildsys.co</a> <br />
-                        <br />
-                        <a href="tel:+911140599999">+91 11 40599999 </a> <br />
-                        <br />
                     </div>
                 </div>
                 <div className="col">

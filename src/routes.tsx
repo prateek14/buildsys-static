@@ -25,6 +25,9 @@ export const Routes: React.FunctionComponent = () => {
     // Scroll to top if path changes
     useLayoutEffect(() => {
         window.scrollTo(0, 0);
+        if (location.hash) {
+            document.getElementById(location.hash.substr(1, location.hash.length - 1))?.scrollIntoView();
+        }
     }, [location.pathname]);
 
     return (
