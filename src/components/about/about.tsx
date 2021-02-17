@@ -74,10 +74,11 @@ export const About: React.FunctionComponent = (): JSX.Element => {
 export const Contact: React.FunctionComponent = (): JSX.Element => {
     const width = '100%';
     const padding = '64px 0';
-    const isTablet = useMediaPredicate('(max-width: 979px)');
+    const isTablet = useMediaPredicate('(max-width: 1300px)');
     // const colWidth = isTablet ? 'calc(100vw - 64px)' : 'calc(50vw - 164px)';
     // const colPadding2 = isTablet ? '64px 64px' : '164px 64px 64px 100px';
-    const colWidthRight = 'calc(50vw - 9px)';
+    const colWidthRight = isTablet ? 'calc(100vw - 64px)' : 'calc(50vw - 9px)';
+    const colPadding = isTablet ? '32px' : '0';
     return (
         <div id="contact">
             <FullWidthPanel className="flex-center" backgroundColor="#fefefe">
@@ -88,7 +89,7 @@ export const Contact: React.FunctionComponent = (): JSX.Element => {
                         gutterHeight="0px"
                         backgroundColor="transparent"
                         rightChildren={
-                            <SinglePanel padding="64px 0">
+                            <SinglePanel padding={colPadding} width={colWidthRight}>
                                 <h2>Get in touch</h2>
                                 <p className="text-20">
                                     6th Floor, Select CITYWALK <br />
@@ -105,24 +106,27 @@ export const Contact: React.FunctionComponent = (): JSX.Element => {
                                 </p>
                             </SinglePanel>
                         }>
-                        {!isTablet && (
-                            <SinglePanel className="flex" width={colWidthRight}>
-                                <div className="mapouter">
-                                    <div className="gmap_canvas">
-                                        <iframe
-                                            width="600"
-                                            height="400"
-                                            id="gmap_canvas"
-                                            src="https://maps.google.com/maps?q=Buildsys&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
-                                            frameBorder="0"
-                                            scrolling="no"
-                                            marginHeight={0}
-                                            marginWidth={0}></iframe>
-                                        <br />
-                                    </div>
+                        <SinglePanel className="flex map" padding={colPadding} width={colWidthRight}>
+                            <div className="mapouter">
+                                <div
+                                    className="gmap_canvas"
+                                    style={{
+                                        width: isTablet ? '400px' : '600px',
+                                        maxWidth: 'calc(100vw - 64px)',
+                                    }}>
+                                    <iframe
+                                        width={isTablet ? '400' : '600'}
+                                        height="400"
+                                        id="gmap_canvas"
+                                        src="https://maps.google.com/maps?q=Buildsys&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+                                        frameBorder="0"
+                                        scrolling="no"
+                                        marginHeight={0}
+                                        marginWidth={0}></iframe>
+                                    <br />
                                 </div>
-                            </SinglePanel>
-                        )}
+                            </div>
+                        </SinglePanel>
                     </TwoColumnPanel>
                 </SinglePanel>
             </FullWidthPanel>

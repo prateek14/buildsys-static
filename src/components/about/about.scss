@@ -48,16 +48,26 @@ img.profile {
     }
 }
 
+.map {
+    justify-content: flex-end;
+}
+
+.tablet,
+.mobile {
+
+    .map {
+        justify-content: flex-start;
+    }
+}
+
 .mapouter {
     position: relative;
     text-align: right;
-    height: 400;
-    width: 600px;
+    height: 400px;
 }
 
 .gmap_canvas {
     overflow: hidden;
     background: none !important;
-    height: 400;
-    width: 600px;
+    height: 400px;
 }
