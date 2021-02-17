@@ -1,9 +1,9 @@
 {
     "all": [
         {
-            "title": "Technology enabling collaboration and communication among construction professionals in the pandemic",
-            "description": "Yesterday at CSSConf, we launched Pure – a new CSS library. Phew! Here are the slides from the presentation. Although it looks pretty minimalist, we’ve been working on Pure for several months. After many iterations, we have released Pure as a set of small, responsive, CSS modules that you can use in every web project.",
-            "slug": "1",
+            "title": "Technology enabling collaboration in construction teams during the pandemic",
+            "description": "The construction industry, like many other sectors, took a hit during the pandemic - site work came to a standstill, projects were delayed indefinitely, and supply chains were disrupted. However, the industry has taken a promising turn towards technology to meet these challenges - a shift that is predicted to have a lasting impact on its future.",
+            "slug": "technology-collaboration-pandemic",
             "date": "2021-02-16T14:43:20.749Z",
             "url": "1.md",
             "img": "/assets/blogs/images/1-1.jpg",
