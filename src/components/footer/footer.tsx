@@ -4,6 +4,7 @@ import './footer.scss';
 import { FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { ContactForm } from '../contact/contact-form';
 import { Link } from 'react-router-dom';
+import { AppleLink, GoogleLink } from '../common/app-links';
 
 export const Footer: React.FunctionComponent = (): JSX.Element => {
     const isMobile = useMediaPredicate('(max-width: 979px)');
@@ -73,6 +74,12 @@ export const FooterMain: React.FunctionComponent = (): JSX.Element => {
                         <a href="https://app.buildsys.co" rel="noreferrer" target="_blank">
                             Login
                         </a>
+                    </p>
+                    <p>
+                        <AppleLink></AppleLink>
+                    </p>
+                    <p>
+                        <GoogleLink></GoogleLink>
                     </p>
                 </div>
                 <div className="col">

@@ -1,5 +1,5 @@
 import React, { useLayoutEffect } from 'react';
-import { Switch, Route, useLocation } from 'react-router-dom';
+import { Switch, Route, useLocation, Redirect } from 'react-router-dom';
 import { NotFound } from './components/404/404';
 import { Support } from './components/support/support';
 import { Default } from './components/default/default';
@@ -42,6 +42,18 @@ export const Routes: React.FunctionComponent = () => {
             <Route exact path="/privacy-notice" component={Privacy} />
             <Route path="/blog/:id" component={BlogItem} />
             <Route exact path="/blog" component={Blog} />
+            <Route exact path="/about-us">
+                <Redirect to="/us" />
+            </Route>
+            <Route exact path="/contact-us">
+                <Redirect to="/us#contact" />
+            </Route>
+            <Route exact path="/products-solutions">
+                <Redirect to="/" />
+            </Route>
+            <Route path="/staff/*">
+                <Redirect to="/us" />
+            </Route>
             <Route component={NotFound} />
         </Switch>
     );

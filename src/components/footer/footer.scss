@@ -58,6 +58,17 @@
             }
         }
 
+        a.app-link {
+            display: block;
+
+            img {
+                width: 120px;
+                height: 53px;
+                object-fit: cover;
+                margin-top: -10px;
+            }
+        }
+
         >div {
             width: 100%;
 
@@ -107,8 +118,8 @@
                     padding: 0 20px;
 
                     >svg {
-                        width: 3.5em;
-                        height: 3.5em;
+                        width: 2em;
+                        height: 2em;
                     }
                 }
             }
@@ -126,6 +137,10 @@
                 >div {
                     padding: 8px 0;
                 }
+            }
+
+            label {
+                display: block;
             }
         }
     }
