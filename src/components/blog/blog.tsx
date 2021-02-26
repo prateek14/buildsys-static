@@ -8,6 +8,8 @@ import { FullWidthPanel } from '../common/full-width-panel';
 import { SinglePanel } from '../common/single-panel';
 import './blog.scss';
 
+import list from './list';
+
 interface BlogPost {
     title: string;
     url: string;
@@ -20,31 +22,10 @@ interface BlogPost {
 
 export const Blog: React.FunctionComponent = (): JSX.Element => {
     useTitle('Blog');
-
-    const [items, setItems] = useState<BlogPost[]>([]);
-    const [tags, setTags] = useState<string[]>(['All']);
+    const items: BlogPost[] = list.all;
+    const tags = getTags(items);
     const [currentTag, setCurrentTag] = useState<string>('All');
 
-    useEffect(() => {
-        getBlogs()
-            .then((items) => {
-                setItems(items);
-                const t: Dictionary<number> = {};
-                items.forEach((p) => {
-                    p.tags.forEach((tag) => {
-                        if (t[tag]) {
-                            t[tag]++;
-                        } else {
-                            t[tag] = 1;
-                        }
-                    });
-                });
-                setTags(['All', ...Object.keys(t).sort((a, b) => t[a] - t[b])]);
-            })
-            .catch((e) => {
-                console.log(e);
-            });
-    }, []);
     return (
         <Fragment>
             <FullWidthPanel className="flex-center" backgroundColor="#fefefe">
@@ -122,23 +103,9 @@ export const PostListItem: React.FunctionComponent<{
 };
 
 export const BlogItem: React.FunctionComponent = (): JSX.Element => {
-    const [item, setItem] = useState<BlogPost | undefined | null>(undefined);
     const { id }: { id: string } = useParams();
-    useEffect(() => {
-        getBlogs()
-            .then((items) => {
-                const found = items.find((item) => item.slug.toLowerCase() === id.toLowerCase());
-                if (found) {
-                    setItem(found);
-                } else {
-                    setItem(null);
-                }
-            })
-            .catch((e) => {
-                console.log(e);
-            });
-    }, []);
-    if (item === null) {
+    const item = list.all.find((item) => item.slug.toLowerCase() === id.toLowerCase());
+    if (!item) {
         return <NotFound></NotFound>;
     }
     return (
@@ -186,22 +153,6 @@ export const PostItem: React.FunctionComponent<{ item: BlogPost }> = (props: { i
     );
 };
 
-const getBlogs = async (): Promise<BlogPost[]> => {
-    try {
-        const response = await fetch('/assets/blogs/list.json', {
-            headers: {
-                'Content-Type': 'application/json',
-                Accept: 'application/json',
-            },
-        });
-        const dto = await response.json();
-        return dto.all;
-    } catch (e) {
-        console.log(e);
-        return [];
-    }
-};
-
 const getBlogItem = async (url: string): Promise<string> => {
     try {
         const response = await fetch(url, {
@@ -216,4 +167,18 @@ const getBlogItem = async (url: string): Promise<string> => {
         console.log(e);
         return '';
     }
+};
+
+const getTags = (items: BlogPost[]): string[] => {
+    const t: Dictionary<number> = {};
+    items.forEach((p) => {
+        p.tags.forEach((tag) => {
+            if (t[tag]) {
+                t[tag]++;
+            } else {
+                t[tag] = 1;
+            }
+        });
+    });
+    return ['All', ...Object.keys(t).sort((a, b) => t[a] - t[b])];
 };
