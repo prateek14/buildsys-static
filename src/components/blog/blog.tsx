@@ -22,7 +22,13 @@ interface BlogPost {
 
 export const Blog: React.FunctionComponent = (): JSX.Element => {
     useTitle('Blog');
-    const items: BlogPost[] = list.all;
+    const items: BlogPost[] = list.all.sort((a, b) => {
+        let bDate = new Date(b.date).valueOf();
+        bDate = isNaN(bDate) ? 0 : bDate;
+        let aDate = new Date(a.date).valueOf();
+        aDate = isNaN(aDate) ? 0 : aDate;
+        return bDate - aDate;
+    });
     const tags = getTags(items);
     const [currentTag, setCurrentTag] = useState<string>('All');
 
