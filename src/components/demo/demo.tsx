@@ -122,7 +122,16 @@ export const Demo: React.FunctionComponent = (): JSX.Element => {
                         <li>Document control that is simple, trackable and accountable</li>
                         <li> One updated workspace for your team</li>
                     </ul>
-                    <img src="/assets/hero/demo1.jpg" style={{ maxWidth: '500px', borderRadius: '15px' }} />
+                    <picture>
+                        <source srcSet="/assets/hero/demo1.webp" type="image/webp" />
+                        <source srcSet="/assets/hero/demo1.jpg" type="image/png" />
+                        <img
+                            src="/assets/hero/demo1.jpg"
+                            style={{ maxWidth: '500px', borderRadius: '15px' }}
+                            alt="Schedule demo"
+                            title="Schedule demo"
+                        />
+                    </picture>
                 </SinglePanel>
             </TwoColumnPanel>
         </Fragment>

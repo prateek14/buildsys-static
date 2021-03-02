@@ -76,12 +76,16 @@ export default function Home(): ReactElement {
                 }>
                 {!isTablet && (
                     <SinglePanel className="flex-center" width={colWidthLeft}>
-                        <img
-                            style={{ width: imgWidth, borderRadius: imgBorderRadius, margin: imgMargin }}
-                            src="/assets/hero/one-place.jpg"
-                            alt="All project data at one place"
-                            title="All project data at one place"
-                        />
+                        <picture>
+                            <source srcSet="/assets/hero/one-place.webp" type="image/webp" />
+                            <source srcSet="/assets/hero/one-place.jpg" type="image/jpeg" />
+                            <img
+                                style={{ width: imgWidth, borderRadius: imgBorderRadius, margin: imgMargin }}
+                                src="/assets/hero/one-place.jpg"
+                                alt="All project data at one place"
+                                title="All project data at one place"
+                            />
+                        </picture>
                     </SinglePanel>
                 )}
             </TwoColumnPanel>
@@ -93,12 +97,16 @@ export default function Home(): ReactElement {
                 rightChildren={
                     !isTablet && (
                         <SinglePanel className="flex-center" width={colWidthLeft}>
-                            <img
-                                style={{ width: imgWidth, borderRadius: imgBorderRadius, margin: imgMargin }}
-                                src="/assets/hero/coordination.png"
-                                alt="Real time coordination"
-                                title="Real time coordination"
-                            />
+                            <picture>
+                                <source srcSet="/assets/hero/coordination.webp" type="image/webp" />
+                                <source srcSet="/assets/hero/coordination.png" type="image/png" />
+                                <img
+                                    style={{ width: imgWidth, borderRadius: imgBorderRadius, margin: imgMargin }}
+                                    src="/assets/hero/coordination.png"
+                                    alt="Real time coordination"
+                                    title="Real time coordination"
+                                />
+                            </picture>
                         </SinglePanel>
                     )
                 }>
@@ -158,12 +166,16 @@ export default function Home(): ReactElement {
                 }>
                 {!isTablet && (
                     <SinglePanel className="flex-center" width={colWidthLeft}>
-                        <img
-                            style={{ width: imgWidth, borderRadius: imgBorderRadius, margin: imgMargin }}
-                            src="/assets/hero/paperwork.jpg"
-                            alt="Digitize all construction workflows"
-                            title="Digitize all construction workflows"
-                        />
+                        <picture>
+                            <source srcSet="/assets/hero/paperwork.webp" type="image/webp" />
+                            <source srcSet="/assets/hero/paperwork.jpg" type="image/jpeg" />
+                            <img
+                                style={{ width: imgWidth, borderRadius: imgBorderRadius, margin: imgMargin }}
+                                src="/assets/hero/paperwork.jpg"
+                                alt="Digitize all construction workflows"
+                                title="Digitize all construction workflows"
+                            />
+                        </picture>
                     </SinglePanel>
                 )}
             </TwoColumnPanel>

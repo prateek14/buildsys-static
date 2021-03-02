@@ -42,12 +42,16 @@ export const About: React.FunctionComponent = (): JSX.Element => {
                 rightChildren={
                     !isTablet && (
                         <SinglePanel className="flex" width={colWidthRight}>
-                            <img
-                                style={{ width: imgWidth, borderRadius: imgBorderRadius, margin: imgMargin }}
-                                src="/assets/hero/landscape-1.jpg"
-                                alt="Buildsys About Us"
-                                title="Buildsys About Us"
-                            />
+                            <picture>
+                                <source srcSet="/assets/hero/landscape-1.webp" type="image/webp" />
+                                <source srcSet="/assets/hero/landscape-1.jpg" type="image/png" />
+                                <img
+                                    src="/assets/hero/landscape-1.jpg"
+                                    style={{ width: imgWidth, borderRadius: imgBorderRadius, margin: imgMargin }}
+                                    alt="Buildsys About Us"
+                                    title="Buildsys About Us"
+                                />
+                            </picture>
                         </SinglePanel>
                     )
                 }>
@@ -152,7 +156,16 @@ export const LeadershipGrid: React.FunctionComponent = (): JSX.Element => {
         <Fragment>
             <ul className="lgrid">
                 <li className="text-center">
-                    <img className="profile" src="assets/profile/Yukti.jpg" />
+                    <picture>
+                        <source srcSet="/assets/profile/Yukti.webp" type="image/webp" />
+                        <source srcSet="/assets/profile/Yukti.jpg" type="image/jpg" />
+                        <img
+                            className="profile"
+                            src="/assets/profile/Yukti.jpg"
+                            alt="Yukti Arora"
+                            title="Yukti Arora"
+                        />
+                    </picture>
                     <div>
                         <div className="text-20 text-bold">Yukti Arora</div>
                         <div>CPO &amp; Co-founder</div>
@@ -167,7 +180,16 @@ export const LeadershipGrid: React.FunctionComponent = (): JSX.Element => {
                     </div>
                 </li>
                 <li className="text-center">
-                    <img className="profile" src="assets/profile/Prateek.jpg" />
+                    <picture>
+                        <source srcSet="/assets/profile/Prateek.webp" type="image/webp" />
+                        <source srcSet="/assets/profile/Prateek.jpg" type="image/jpg" />
+                        <img
+                            className="profile"
+                            src="/assets/profile/Prateek.jpg"
+                            alt="Prateek Arora"
+                            title="Prateek Arora"
+                        />
+                    </picture>
                     <div>
                         <div className="text-20 text-bold">Prateek Arora</div>
                         <div>CTO &amp; Co-founder</div>

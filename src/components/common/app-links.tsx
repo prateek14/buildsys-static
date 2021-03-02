@@ -19,10 +19,7 @@ export const GoogleLink: React.FunctionComponent = (): JSX.Element => {
             href="https://play.google.com/store/apps/details?id=co.buildsys.app.prod"
             rel="noreferrer"
             target="_blank">
-            <img
-                alt="Get it on Google Play"
-                src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-            />
+            <img alt="Get it on Google Play" title="Get it on Google Play" src="/assets/google-play.png" />
         </a>
     );
 };
