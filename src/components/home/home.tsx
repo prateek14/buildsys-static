@@ -21,11 +21,12 @@ export default function Home(): ReactElement {
     return (
         <Fragment>
             <TwoColumnPanel
+                className="home-1-bg"
                 padding="0"
                 gutterWidth="0px"
                 gutterHeight="0px"
                 backgroundColor="#ffffff"
-                background="url('/assets/hero/home1.jpeg') 0px -300px no-repeat"
+                background="url('/assets/hero/home1.webp') 0px -300px no-repeat"
                 rightChildren={
                     !isTablet && (
                         <SinglePanel

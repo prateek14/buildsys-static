@@ -8,6 +8,7 @@ export type TwoColumnPanelProps = PropsWithChildren<{ backgroundColor: string; b
     gutterHeight?: string;
     padding?: string;
     rightChildren?: ReactNode;
+    className?: string;
 };
 
 export const TwoColumnPanel: React.FunctionComponent<TwoColumnPanelProps> = (
@@ -23,7 +24,7 @@ export const TwoColumnPanel: React.FunctionComponent<TwoColumnPanelProps> = (
         : { paddingLeft: props.gutterWidth };
     return (
         <div
-            className={'two-col flex ' + className}
+            className={'two-col flex ' + className + ' ' + props.className}
             style={{
                 background: props.background || props.backgroundColor,
                 padding: props.padding || '64px 100px',

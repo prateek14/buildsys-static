@@ -18,7 +18,7 @@ declare const self: ServiceWorkerGlobalScope;
 
 clientsClaim();
 
-const version = '32';
+const version = '33';
 
 self.__WB_MANIFEST = [
     { url: '/index.html', revision: version },
@@ -35,7 +35,7 @@ self.__WB_MANIFEST = [
     { url: '/assets/google-play.png', revision: version },
     { url: '/assets/manifest.json', revision: version },
     { url: '/assets/hero/landscape-1.jpg', revision: version },
-    { url: '/assets/hero/home1.jpeg', revision: version },
+    { url: '/assets/hero/home1.jpg', revision: version },
     { url: '/assets/hero/one-place.jpg', revision: version },
     { url: '/assets/hero/paperwork.jpg', revision: version },
     { url: '/assets/hero/coordination.png', revision: version },
