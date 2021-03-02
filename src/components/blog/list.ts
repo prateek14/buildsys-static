@@ -16,6 +16,7 @@ export default {
                 'The construction industry has many limitations like fragmented ways of communication, site delays, miscommunication in the teams etc. In this post-COVID19 world, the need to switch to cloud tech & apps are ways to connect & communicate to enable remote working.',
             slug: 'apps-bridge-construction',
             date: '2021-02-26T14:43:20.749Z',
+            img: '/assets/blogs/images/app-bridge-construction.png',
             url: '2.md',
             tags: ['technology', 'collaboration', 'managers', 'projects'],
         },
