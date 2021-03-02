@@ -12,6 +12,12 @@ export default function Home(): ReactElement {
     const colWidth = isTablet ? 'calc(100vw - 64px)' : 'calc(50vw - 164px)';
     const colPadding = isTablet ? '64px 64px' : '300px 64px 100px 100px';
     const colPadding2 = isTablet ? '64px 64px' : '150px 64px 100px 100px';
+
+    const imgWidth = 'calc(50vw - 192px)';
+    const imgMargin = '96px';
+    const imgBorderRadius = '8px';
+    const colWidthLeft = 'calc(50vw - 17px)';
+
     return (
         <Fragment>
             <TwoColumnPanel
@@ -68,14 +74,34 @@ export default function Home(): ReactElement {
                         </FunFact>
                     </SinglePanel>
                 }>
-                {!isTablet && <SinglePanel width={colWidth} padding={colPadding2}></SinglePanel>}
+                {!isTablet && (
+                    <SinglePanel className="flex-center" width={colWidthLeft}>
+                        <img
+                            style={{ width: imgWidth, borderRadius: imgBorderRadius, margin: imgMargin }}
+                            src="/assets/hero/one-place.jpg"
+                            alt="All project data at one place"
+                            title="All project data at one place"
+                        />
+                    </SinglePanel>
+                )}
             </TwoColumnPanel>
             <TwoColumnPanel
                 padding="0"
                 gutterWidth="0px"
                 gutterHeight="0px"
                 backgroundColor="#ffffff"
-                rightChildren={!isTablet && <SinglePanel width={colWidth} padding={colPadding2}></SinglePanel>}>
+                rightChildren={
+                    !isTablet && (
+                        <SinglePanel className="flex-center" width={colWidthLeft}>
+                            <img
+                                style={{ width: imgWidth, borderRadius: imgBorderRadius, margin: imgMargin }}
+                                src="/assets/hero/coordination.png"
+                                alt="Real time coordination"
+                                title="Real time coordination"
+                            />
+                        </SinglePanel>
+                    )
+                }>
                 <SinglePanel
                     className="home-panel-1 flex-column"
                     width={colWidth}
@@ -130,7 +156,16 @@ export default function Home(): ReactElement {
                         </FunFact>
                     </SinglePanel>
                 }>
-                {!isTablet && <SinglePanel width={colWidth} padding={colPadding2}></SinglePanel>}
+                {!isTablet && (
+                    <SinglePanel className="flex-center" width={colWidthLeft}>
+                        <img
+                            style={{ width: imgWidth, borderRadius: imgBorderRadius, margin: imgMargin }}
+                            src="/assets/hero/paperwork.jpg"
+                            alt="Digitize all construction workflows"
+                            title="Digitize all construction workflows"
+                        />
+                    </SinglePanel>
+                )}
             </TwoColumnPanel>
         </Fragment>
     );
