@@ -26,7 +26,7 @@ export default function Home(): ReactElement {
                 gutterWidth="0px"
                 gutterHeight="0px"
                 backgroundColor="#ffffff"
-                background="url('/assets/hero/home1.webp') 0px -300px no-repeat"
+                background="url('/assets/hero/home1.webp') no-repeat"
                 rightChildren={
                     !isTablet && (
                         <SinglePanel
