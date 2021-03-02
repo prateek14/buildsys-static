@@ -11,13 +11,13 @@ export default {
             tags: ['technology', 'collaboration', 'pandemic'],
         },
         {
-            title: 'Apps bridging the gaps in the construction industry in the post-COVID19 world.',
+            title: 'Cloud technology & apps bridging gaps in the construction industry in the post-COVID19 world.',
             description:
-                'In the Post-Covid 19 world, the construction industry will benefit immensely from focusing on fast-tracking digital adoption and cloud based technology. Construction management softwares, enables large-scale remote collaboration in real-time and efficient resource management.',
-            slug: 'apps-bridge-gap',
+                'The construction industry has many limitations like fragmented ways of communication, site delays, miscommunication in the teams etc. In this post-COVID19 world, the need to switch to cloud tech & apps are ways to connect & communicate to enable remote working.',
+            slug: 'apps-bridge-construction',
             date: '2021-02-26T14:43:20.749Z',
             url: '2.md',
-            tags: ['technology', 'collaboration', 'pandemic'],
+            tags: ['technology', 'collaboration', 'managers', 'projects'],
         },
     ],
 };
