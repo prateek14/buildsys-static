@@ -100,10 +100,10 @@ export default function Home(): ReactElement {
                         <SinglePanel className="flex-center" width={colWidthLeft}>
                             <picture>
                                 <source srcSet="/assets/hero/coordination.webp" type="image/webp" />
-                                <source srcSet="/assets/hero/coordination.png" type="image/png" />
+                                <source srcSet="/assets/hero/coordination.jpg" type="image/jpeg" />
                                 <img
                                     style={{ width: imgWidth, borderRadius: imgBorderRadius, margin: imgMargin }}
-                                    src="/assets/hero/coordination.png"
+                                    src="/assets/hero/coordination.jpg"
                                     alt="Real time coordination"
                                     title="Real time coordination"
                                 />
