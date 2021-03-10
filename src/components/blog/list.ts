@@ -20,5 +20,15 @@ export default {
             url: '2.md',
             tags: ['technology', 'collaboration', 'managers', 'projects'],
         },
+        {
+            title: 'Our Founder Yukti Arora on Women’s Day',
+            description:
+                'Women need to take up more challenging roles in the construction domain. Women need to take a stand wherever required and put forward their point unapologetically. Times are changing and I hope to see more women representatives in the construction industry soon.',
+            slug: 'womens-day-yukti-arora',
+            date: '2021-03-08T14:43:20.749Z',
+            img: '/assets/blogs/images/Yukti-Arora-Interview.JPG',
+            url: '3.md',
+            tags: ['buildsys in news', 'yukti arora'],
+        },
     ],
 };
