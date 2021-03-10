@@ -28,7 +28,17 @@ export default {
             date: '2021-03-08T14:43:20.749Z',
             img: '/assets/blogs/images/Yukti-Arora-Interview.JPG',
             url: '3.md',
-            tags: ['buildsys in news', 'yukti arora'],
+            tags: ['buildsys in news', 'yukti arora', '99acres'],
+        },
+        {
+            title: 'Together for the long run',
+            description:
+                'Buildsys co-founders yukti and prateek arora on constructing their life and a business with each other.',
+            slug: 'together-long-run',
+            date: '2021-02-21T14:43:20.749Z',
+            img: '/assets/blogs/images/founders-interview.jpg',
+            url: '4.md',
+            tags: ['buildsys in news', 'morningstandard'],
         },
     ],
 };
