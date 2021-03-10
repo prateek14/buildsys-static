@@ -186,5 +186,10 @@ const getTags = (items: BlogPost[]): string[] => {
             }
         });
     });
-    return ['All', ...Object.keys(t).sort((a, b) => t[a] - t[b])];
+    return [
+        'All',
+        ...Object.keys(t)
+            .sort((a, b) => t[b] - t[a])
+            .slice(0, 5),
+    ];
 };
