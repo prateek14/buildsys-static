@@ -18,7 +18,7 @@ declare const self: ServiceWorkerGlobalScope;
 
 clientsClaim();
 
-const version = '38';
+const version = '39';
 
 self.__WB_MANIFEST = [
     { url: '/index.html', revision: version },

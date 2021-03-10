@@ -3,6 +3,8 @@
 
     img {
         max-width: 100%;
+        display: block;
+        margin: 0 auto;
     }
 
     .date {
@@ -76,6 +78,7 @@
 
 .filter-tags {
     padding: 0 12px;
+
     >div {
         display: inline-block;
         margin-right: 16px;
