@@ -40,5 +40,14 @@ export default {
             url: '4.md',
             tags: ['buildsys in news', 'morningstandard'],
         },
+        {
+            title:
+                'Lady bosses have a message for Class of 2021: Aspire to be in the C-suite, be bold and keep your options open',
+            description: 'Our founder Yukti Arora featured on ET Panache',
+            slug: 'lady-bosses-2021',
+            date: '2021-03-03T14:43:20.749Z',
+            url: '5.md',
+            tags: ['buildsys in news', 'yukti arora', 'ET panache'],
+        },
     ],
 };
