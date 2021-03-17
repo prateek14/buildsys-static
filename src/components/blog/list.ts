@@ -16,7 +16,7 @@ export default {
                 'The construction industry has many limitations like fragmented ways of communication, site delays, miscommunication in the teams etc. In this post-COVID19 world, the need to switch to cloud tech & apps are ways to connect & communicate to enable remote working.',
             slug: 'apps-bridge-construction',
             date: '2021-02-26T14:43:20.749Z',
-            img: '/assets/blogs/images/app-bridge-construction.png',
+            img: '/assets/blogs/images/app-bridge-construction.jpg',
             url: '2.md',
             tags: ['technology', 'collaboration', 'managers', 'projects'],
         },
@@ -48,6 +48,16 @@ export default {
             date: '2021-03-03T14:43:20.749Z',
             url: '5.md',
             tags: ['buildsys in news', 'yukti arora', 'ET panache'],
+        },
+        {
+            title: 'Mobile apps replacing conventional 2D drawings and methods in the new era of rapid construction',
+            description:
+                'The construction industry has played a pivotal role in responding to the crisis caused by the global pandemic, from constructing hospitals in record time to refurbishing spaces as per social-distancing norms. The shift towards digitization and the efficient use of smartphones has led to enhanced mobility and improved efficiency in all workflows.',
+            slug: 'digitization-efficiency-construction',
+            date: '2021-03-17T14:43:20.749Z',
+            url: '6.md',
+            img: '/assets/blogs/images/all-in-one-place.jpg',
+            tags: ['digitization', 'construction', 'technology', 'managers', 'projects'],
         },
     ],
 };
