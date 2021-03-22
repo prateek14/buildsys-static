@@ -5,6 +5,9 @@ import { FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { ContactForm } from '../contact/contact-form';
 import { Link } from 'react-router-dom';
 import { AppleLink, GoogleLink } from '../common/app-links';
+import MailchimpSubscribe from 'react-mailchimp-subscribe';
+
+const url = 'https://buildsys.us7.list-manage.com/subscribe/post?u=84fb69048736bc9b382cdba7a&amp;id=17203310df';
 
 export const Footer: React.FunctionComponent = (): JSX.Element => {
     const isMobile = useMediaPredicate('(max-width: 979px)');
@@ -19,6 +22,7 @@ export const Footer: React.FunctionComponent = (): JSX.Element => {
 export const FooterDesktop: React.FunctionComponent = (): JSX.Element => {
     return (
         <div className="footer footer-desktop">
+            <FooterSubscribe></FooterSubscribe>
             <FooterMain></FooterMain>
             <FooterSecondary></FooterSecondary>
         </div>
@@ -28,8 +32,20 @@ export const FooterDesktop: React.FunctionComponent = (): JSX.Element => {
 export const FooterMobile: React.FunctionComponent = (): JSX.Element => {
     return (
         <div className="footer footer-mobile">
+            <FooterSubscribe></FooterSubscribe>
             <FooterMain></FooterMain>
             <FooterSecondary></FooterSecondary>
+        </div>
+    );
+};
+
+export const FooterSubscribe: React.FunctionComponent = (): JSX.Element => {
+    return (
+        <div className="footer-form flex-column-center">
+            <h2>Subscribe to our mailing list</h2>
+            <div className="flex-center">
+                <MailchimpSubscribe url={url} />
+            </div>
         </div>
     );
 };

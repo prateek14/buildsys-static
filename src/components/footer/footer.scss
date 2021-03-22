@@ -144,4 +144,74 @@
             }
         }
     }
+
+    .footer-form {
+        padding: 96px 40px 48px;
+
+        >div {
+            margin: 0 auto;
+            min-width: 400px;
+
+            >div {
+                text-align: center;
+
+                >div {
+                    margin: 10px 0;
+                }
+
+                input[type=email] {
+                    letter-spacing: 0;
+                    font-weight: 400;
+                    color: rgba(0, 0, 0, 0.6);
+                    background-color: #ffffff;
+                    border-color: #cccccc;
+                    border-width: 1px;
+                    border-style: solid;
+                    padding: 6px 10px;
+                    box-sizing: border-box;
+                    outline: none;
+                    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+                    font-size: 19px;
+                    line-height: 1.4;
+                    margin-bottom: 12px;
+                    height: 40px;
+
+                    &:focus {
+                        background-color: #ffffff;
+                        border-color: #3079cd;
+                        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
+                    }
+                }
+
+                button {
+                    height: 40px;
+                    min-width: 170px;
+                    font-size: 15px;
+                    font-weight: 400;
+                    text-transform: none;
+                    letter-spacing: 0px;
+                    border: 1px solid rgb(78, 84, 94);
+                    background: rgba(0, 0, 0, 0.01);
+                    text-align: center;
+                    position: relative;
+                    display: inline-block;
+                    vertical-align: top;
+                    margin: 0 auto;
+                    box-shadow: none;
+
+                    background: #efefef;
+                    border-color: #cccccc;
+                    color: #444444;
+
+                    &:hover {
+                        border-color: #3079cd;
+                        background: #3079cd;
+                        color: white;
+                    }
+
+                    cursor: pointer;
+                }
+            }
+        }
+    }
 }
