@@ -7,7 +7,9 @@ import { Link } from 'react-router-dom';
 import { AppleLink, GoogleLink } from '../common/app-links';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
 
-const url = 'https://buildsys.us7.list-manage.com/subscribe/post?u=84fb69048736bc9b382cdba7a&amp;id=17203310df';
+// const url = 'https://buildsys.us7.list-manage.com/subscribe/post?u=84fb69048736bc9b382cdba7a&amp;id=17203310df';
+
+const url = 'https://buildsys.us7.list-manage.com/subscribe/post?u=8a3a5698916dc42faa11a9659&amp;id=df83a7e441';
 
 export const Footer: React.FunctionComponent = (): JSX.Element => {
     const isMobile = useMediaPredicate('(max-width: 979px)');
