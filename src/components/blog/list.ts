@@ -59,5 +59,15 @@ export default {
             img: '/assets/blogs/images/all-in-one-place.jpg',
             tags: ['digitization', 'construction', 'technology', 'managers', 'projects'],
         },
+        {
+            title: 'Mobile Applications enabling management of the construction lifecycle through cloud & collaboration technology',
+            description:
+                'The construction industry consistently seeks out new methods of digitizing multiple amounts of data, including drawings, texts, images, coordination and communication. One such way to enable this would be by using cloud and collaboration technologies.',
+            slug: 'mobile-apps-construction-lifecycle',
+            date: '2021-04-30T14:43:20.749Z',
+            url: '7.md',
+            img: '/assets/blogs/images/all-in-one-place.jpg',
+            tags: ['digitization', 'construction', 'technology', 'lifecycle', 'collaboration'],
+        },
     ],
 };
