@@ -66,7 +66,7 @@ export default {
             slug: 'mobile-apps-construction-lifecycle',
             date: '2021-04-30T14:43:20.749Z',
             url: '7.md',
-            img: '/assets/blogs/images/all-in-one-place.jpg',
+            img: '/assets/blogs/images/7-1.jpg',
             tags: ['digitization', 'construction', 'technology', 'lifecycle', 'collaboration'],
         },
     ],
