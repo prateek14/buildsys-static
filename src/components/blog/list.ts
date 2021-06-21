@@ -69,15 +69,5 @@ export default {
             img: '/assets/blogs/images/7-1.jpg',
             tags: ['digitization', 'construction', 'technology', 'lifecycle', 'collaboration'],
         },
-        {
-            title: 'Test',
-            description:
-                'Test',
-            slug: 'test',
-            date: '2021-06-21T14:43:20.749Z',
-            url: '8.md',
-            img: '/assets/blogs/images/7-1.jpg',
-            tags: ['test'],
-        },
     ],
 };
