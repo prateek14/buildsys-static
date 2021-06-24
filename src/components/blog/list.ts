@@ -69,5 +69,14 @@ export default {
             img: '/assets/blogs/images/7-1.jpg',
             tags: ['digitization', 'construction', 'technology', 'lifecycle', 'collaboration'],
         },
+                {
+            title: 'What is the Potential of Smart Applications for Construction Management',
+            description:
+                'The most powerful feature that smart apps facilitate is offsite project management and instant plan sharing',
+            date: '2021-06-24T14:43:20.749Z',
+            url: 'Buildsys Blog 5- Smart apps for construction management.md',
+            img: 'hello Yukti.jpg',
+            tags: ['digitization', 'construction', 'technology', 'apps', 'collaboration'],
+        },
     ],
 };
