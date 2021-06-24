@@ -1,0 +1,50 @@
+*What is the potential of smart applications for construction
+management?*
+
+The ongoing pandemic has forced most industry sectors to transform
+overnight, and the construction industry is no different. Amidst the
+obstacles of social distancing and supply chain delays posed by the
+pandemic, there has been an urgent and growing need for building and
+adapting essential infrastructure like hospitals, as well as keeping
+existing projects on track to ensure minimal disruption for customers.
+
+The unique challenges posed by this situation have laid the groundwork
+for an accelerated adoption of digital management into the construction
+industry, which otherwise previously relied heavily on offline site
+management. A wide array of smart applications have been developed in
+the space, and have the potential to improve some of the fundamental
+limitations in the sector.
+
+The most powerful feature that smart apps facilitate is offsite project
+management and instant plan sharing. These tools allow worksites to
+operate with limited manpower to meet social distancing guidelines,
+while still letting architects and project leads supervise and manage
+the project as needed. Construction management apps like Buildsys
+centralise project data, plans, and task lists, allowing project leads
+to track and instantly direct them on the move, anytime.
+
+Virtual model builder applications are another noteworthy innovation,
+which can construct and revise models based on blueprints instantly even
+on mobile devices. The assistance provided by these in identifying
+problems early has the potential to save hundreds of thousands in costs
+through early recognition.
+
+The use of smart apps to make workplaces safer has been similarly
+impactful. Examples that can be seen today have been effective in
+gamifying on site safety training modules and advising on specific
+precautions based on weather conditions and altitude.
+
+This widespread adoption of smart apps in the digitization of
+construction management is enabling projects to better meet projections
+and improve efficiency by simplifying the management of the project in a
+single cloud based platform. With their easy accessibility across both
+desktop and mobile devices, they are flexible and accessible to even
+first time technology users. Further, better optimisation and planning
+leads to better resource management as well, reducing waste output in an
+industry which is one of the largest producers of waste globally.
+
+The benefits offered by smart construction management apps are game
+changers in the field. With an easy transition process and excellent
+utility for projects of all kinds, smart apps are expected to become not
+just common, but also an essential part of construction management
+practice.
