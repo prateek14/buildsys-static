@@ -17,11 +17,12 @@ interface PricingSlab {
     desc: string;
     color: string;
     price:
-        | string
-        | {
-              annual: string;
-              monthly?: string;
-          };
+    | string
+    | {
+        annual: string;
+        monthly?: string;
+        perWhat?: string;
+    };
     constraints: string[];
     featureText: string;
     features: string[];
@@ -53,22 +54,22 @@ const featureGroups: FeatureGroup[] = [
             Enterprise: 'full',
         },
         features: [
-            {
-                title: 'Contributor or Admin Accounts',
-                plans: {
-                    Basic: '25',
-                    Pro: '100',
-                    Enterprise: 'Unlimited',
-                },
-            },
-            {
-                title: 'Reader Accounts',
-                plans: {
-                    Basic: 'Unlimited',
-                    Pro: 'Unlimited',
-                    Enterprise: 'Unlimited',
-                },
-            },
+            // {
+            //     title: 'Contributor or Admin Accounts',
+            //     plans: {
+            //         Basic: 'Unlimited',
+            //         Pro: 'Unlimited',
+            //         Enterprise: 'Unlimited',
+            //     },
+            // },
+            // {
+            //     title: 'Reader Accounts',
+            //     plans: {
+            //         Basic: 'Unlimited',
+            //         Pro: 'Unlimited',
+            //         Enterprise: 'Unlimited',
+            //     },
+            // },
             {
                 title: 'Projects',
                 plans: {
@@ -382,7 +383,7 @@ const featureGroups: FeatureGroup[] = [
                 title: 'Integrations with third party tools',
                 plans: {
                     Basic: false,
-                    Pro: true,
+                    Pro: false,
                     Enterprise: true,
                 },
             },
@@ -420,8 +421,10 @@ export const Pricing: React.FunctionComponent = (): JSX.Element => {
             price: {
                 annual: currency.symbol + Math.round(1250 * currency.coeff),
                 monthly: currency.symbol + Math.round(1500 * currency.coeff),
+                perWhat: 'user',
             },
-            constraints: ['Up to 25 Contributors', 'Up to 1000 Drawings', 'Unlimited Projects'],
+            // constraints: ['Up to 25 Contributors', 'Up to 1000 Drawings', 'Unlimited Projects'],
+            constraints: [],
             featureText: 'Key Features',
             features: ['Drawings', 'Meetings', 'Files', 'Photos', 'Tasks'],
         },
@@ -432,10 +435,12 @@ export const Pricing: React.FunctionComponent = (): JSX.Element => {
             price: {
                 annual: currency.symbol + Math.round(2083 * currency.coeff),
                 monthly: currency.symbol + Math.round(2500 * currency.coeff),
+                perWhat: 'user',
             },
-            constraints: ['Up to 100 Contributors', 'Unlimited Drawings', 'Unlimited Projects'],
+            // constraints: ['Up to 100 Contributors', 'Unlimited Drawings', 'Unlimited Projects'],
+            constraints: [],
             featureText: 'Everything in Basic, plus',
-            features: ['RFIs', 'Submittals', 'Custom Forms', 'Integrations'],
+            features: ['RFIs', 'Submittals'],
         },
         {
             title: 'Enterprise',
@@ -444,10 +449,12 @@ export const Pricing: React.FunctionComponent = (): JSX.Element => {
             price: {
                 annual: currency.symbol + Math.round(4167 * currency.coeff),
                 monthly: currency.symbol + Math.round(5000 * currency.coeff),
+                perWhat: 'contributor',
             },
-            constraints: ['Unlimited Contributors', 'Unlimited Drawings', 'Unlimited Projects'],
+            // constraints: ['Unlimited Contributors', 'Unlimited Drawings', 'Unlimited Projects'],
+            constraints: [],
             featureText: 'Everything in Pro, plus',
-            features: ['SSO (SAML)', 'API Access'],
+            features: ['Unlimited Free Readers', 'SSO (SAML)', 'API Access', 'Integrations'],
         },
     ];
     return (
@@ -496,10 +503,12 @@ export const Price: React.FunctionComponent<{ slab: PricingSlab }> = ({ slab }: 
     let isStringPrice = true;
     let annualPrice = '';
     let monthlyPrice = '';
+    let perWhat = '';
     if (slab.price instanceof Object) {
         isStringPrice = false;
         annualPrice = slab.price.annual;
         monthlyPrice = slab.price.monthly ? slab.price.monthly : '';
+        perWhat = slab.price.perWhat ? slab.price.perWhat : '';
     }
     return (
         <div className="price flex-center pv-24">
@@ -509,7 +518,8 @@ export const Price: React.FunctionComponent<{ slab: PricingSlab }> = ({ slab }: 
                     <div className="flex-center">
                         <div className="text-42 text-bold">{annualPrice}</div>
                         <div className="pl-8 text-14 flex-column">
-                            <span>per mo,</span>
+                            {!perWhat && <span>per mo,</span>}
+                            {perWhat && <span>per {perWhat}/ mo,</span>}
                             <span>billed anually</span>
                         </div>
                     </div>
@@ -537,14 +547,14 @@ export const PricingPanel: React.FunctionComponent<{ slab: PricingSlab }> = ({
                 <Price slab={slab}></Price>
             </div>
             <hr />
-            <div>
+            {/* <div>
                 <div className="text-16 flex-column">
                     {slab.constraints.map((v, i) => (
                         <div key={i}>{v}</div>
                     ))}
                 </div>
             </div>
-            <hr />
+            <hr /> */}
             <div>
                 <div className="text-16 text-bold">{slab.featureText}</div>
                 <div className="text-16 flex-column middle-div">
@@ -564,7 +574,7 @@ export const OnlyContributorsContainer: React.FunctionComponent = (): JSX.Elemen
         <FullWidthPanel backgroundColor="#ffffff">
             <div className={isMobile ? 'contrib-mobile' : ''}>
                 <div className="contrib-container">
-                    <div className="flex-column left-cont">
+                    <div className="flex-column left-cont justify-content-center">
                         <h3>You only pay for Contributors</h3>
                         <div>
                             Buildsys has different kinds of accounts for members of your team - Admins, Contributors
@@ -598,6 +608,7 @@ export const OnlyContributorsContainer: React.FunctionComponent = (): JSX.Elemen
                                     <div className="text-14">
                                         Can view and comment on uploaded drawings, files, photos, tasks, RFIs,
                                         submittals and forms.
+                                        <p className="no-margin-imp"><sub>Free on Enterprise plan only</sub></p>
                                     </div>
                                 </div>
                                 <p className="account-type-price text-14">Free</p>
@@ -722,15 +733,18 @@ export const FAQs: React.FunctionComponent = (): JSX.Element => {
                 content: `You can choose to pay monthly or save 16.7% by choosing annual billing. With annual billing, you make a one-time for 1 year of access to Buildsys. 
                 With monthly billing, payments are due in the first week of every month`,
             },
+            // {
+            //     title: 'What happens when I hit my 1000 drawing limit on the Basic plan?',
+            //     content: `Our Basic plan has a limit of 1000 drawings. Once you hit the limit of 1000 drawings, you will not be able to upload new drawings. 
+            //     To upload more drawings, you will need to upgrade to either the Pro or the Enterprise plan.`,
+            // },
             {
-                title: 'What happens when I hit my 1000 drawing limit on the Basic plan?',
-                content: `Our Basic plan has a limit of 1000 drawings. Once you hit the limit of 1000 drawings, you will not be able to upload new drawings. 
-                To upload more drawings, you will need to upgrade to either the Pro or the Enterprise plan.`,
+                title: 'What happens when I reach the User limit on Basic or Pro?',
+                content: `When a your account reaches its limit you will no longer be able to add new Users. You will need to upgrade to add more Users.`,
             },
             {
-                title: 'What happens when I reach the Contributor limit on Basic or Pro?',
-                content: `When a your account reaches its limit you will no longer be able to add new Contributors. You will need to upgrade to add more Contributors.
-                However, you will be able to add unlimited Viewers to the account.`,
+                title: 'What happens when I reach the Contributor limit on Enterprise?',
+                content: `When a your account reaches its limit you will no longer be able to add new Contributors. You will need to upgrade to add more Contributors.`,
             },
             {
                 title: 'Do I get a refund if I deactivate members from my account?',
