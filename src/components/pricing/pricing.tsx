@@ -509,7 +509,7 @@ export const Price: React.FunctionComponent<{ slab: PricingSlab }> = ({ slab }: 
                     <div className="flex-center">
                         <div className="text-42 text-bold">{annualPrice}</div>
                         <div className="pl-8 text-14 flex-column">
-                            <span>per Contributor/mo,</span>
+                            <span>per mo,</span>
                             <span>billed anually</span>
                         </div>
                     </div>
