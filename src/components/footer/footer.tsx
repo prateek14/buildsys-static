@@ -1,7 +1,7 @@
 import React from 'react';
 import { useMediaPredicate } from 'react-media-hook';
 import './footer.scss';
-import { FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { ContactForm } from '../contact/contact-form';
 import { Link } from 'react-router-dom';
 import { AppleLink, GoogleLink } from '../common/app-links';
@@ -172,6 +172,13 @@ export const FooterSecondary: React.FunctionComponent = (): JSX.Element => {
                             target="_blank"
                             aria-label="Buildsys on Facebook">
                             <FaFacebook />
+                        </a>
+                        <a
+                            href="https://www.instagram.com/buildsys.co/"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                            aria-label="Buildsys on Instagram">
+                            <FaInstagram />
                         </a>
                     </span>
                 </div>
