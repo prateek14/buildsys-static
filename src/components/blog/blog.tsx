@@ -22,7 +22,7 @@ interface BlogPost {
 
 export const Blog: React.FunctionComponent = (): JSX.Element => {
     useTitle('Blog');
-    const items: BlogPost[] = list.all.sort((a, b) => {
+    const items: BlogPost[] = list.blogs.sort((a, b) => {
         let bDate = new Date(b.date).valueOf();
         bDate = isNaN(bDate) ? 0 : bDate;
         let aDate = new Date(a.date).valueOf();
@@ -48,6 +48,7 @@ export const Blog: React.FunctionComponent = (): JSX.Element => {
                     ))}
                 </div>
                 <PostList
+                    isNews={false}
                     onTagChange={(tag) => setCurrentTag(tag)}
                     items={items.filter(
                         (i) => currentTag === 'All' || !!i.tags.find((t) => t === currentTag),
@@ -60,11 +61,12 @@ export const Blog: React.FunctionComponent = (): JSX.Element => {
 export const PostList: React.FunctionComponent<{
     onTagChange: (tag: string) => void;
     items: BlogPost[];
-}> = (props: { onTagChange: (tag: string) => void; items: BlogPost[] }): JSX.Element => {
+    isNews: boolean;
+}> = (props: { onTagChange: (tag: string) => void; items: BlogPost[]; isNews: boolean }): JSX.Element => {
     return (
         <SinglePanel className="blog-single-panel">
             {props.items.map((p, index) => (
-                <PostListItem onTagChange={props.onTagChange} key={index} item={p}></PostListItem>
+                <PostListItem onTagChange={props.onTagChange} key={index} item={p} isNews={props.isNews}></PostListItem>
             ))}
         </SinglePanel>
     );
@@ -73,7 +75,8 @@ export const PostList: React.FunctionComponent<{
 export const PostListItem: React.FunctionComponent<{
     onTagChange: (tag: string) => void;
     item: BlogPost;
-}> = (props: { onTagChange: (tag: string) => void; item: BlogPost }): JSX.Element => {
+    isNews: boolean;
+}> = (props: { onTagChange: (tag: string) => void; item: BlogPost; isNews: boolean }): JSX.Element => {
     const item = props.item;
     const date = Date.parse(item.date);
     let dateStr = '';
@@ -81,9 +84,10 @@ export const PostListItem: React.FunctionComponent<{
         dateStr = new Date(date).toDateString();
     }
     const hasTags = item.tags && item.tags.length > 0;
+    const prefix = props.isNews ? '/news/' : '/blog/';
     return (
         <div className="post-list-item flex-column">
-            <Link to={'/blog/' + item.slug}>
+            <Link to={prefix + item.slug}>
                 <div className="flex-column">
                     {item.img && (
                         <div className="image">
@@ -110,21 +114,8 @@ export const PostListItem: React.FunctionComponent<{
 
 export const BlogItem: React.FunctionComponent = (): JSX.Element => {
     const { id }: { id: string } = useParams();
-    const item = list.all.find((item) => item.slug.toLowerCase() === id.toLowerCase());
-    if (!item) {
-        return <NotFound></NotFound>;
-    }
-    return (
-        <Fragment>
-            {item && (
-                <FullWidthPanel className="flex-center" backgroundColor="#fefefe">
-                    <SinglePanel className="blog-single-panel">
-                        <PostItem item={item}></PostItem>
-                    </SinglePanel>
-                </FullWidthPanel>
-            )}
-        </Fragment>
-    );
+    const item = list.blogs.find((item) => item.slug.toLowerCase() === id.toLowerCase());
+    return <BlogOrNewsItem item={item} />;
 };
 
 export const PostItem: React.FunctionComponent<{ item: BlogPost }> = (props: { item: BlogPost }): JSX.Element => {
@@ -192,4 +183,70 @@ const getTags = (items: BlogPost[]): string[] => {
             .sort((a, b) => t[b] - t[a])
             .slice(0, 5),
     ];
+};
+
+export const News: React.FunctionComponent = (): JSX.Element => {
+    useTitle('Buildsys in News');
+    const items: BlogPost[] = list.news.sort((a, b) => {
+        let bDate = new Date(b.date).valueOf();
+        bDate = isNaN(bDate) ? 0 : bDate;
+        let aDate = new Date(a.date).valueOf();
+        aDate = isNaN(aDate) ? 0 : aDate;
+        return bDate - aDate;
+    });
+    const tags = getTags(items);
+    const [currentTag, setCurrentTag] = useState<string>('All');
+
+    return (
+        <Fragment>
+            <FullWidthPanel className="flex-center" backgroundColor="#fefefe">
+                <h1>Buildsys in News</h1>
+
+                <div className="filter-tags">
+                    {tags.map((tag, index) => (
+                        <div
+                            onClick={() => setCurrentTag(tag)}
+                            className={currentTag === tag ? 'active' : ''}
+                            key={index}>
+                            {tag}
+                        </div>
+                    ))}
+                </div>
+                <PostList
+                    isNews={true}
+                    onTagChange={(tag) => setCurrentTag(tag)}
+                    items={items.filter(
+                        (i) => currentTag === 'All' || !!i.tags.find((t) => t === currentTag),
+                    )}></PostList>
+            </FullWidthPanel>
+        </Fragment>
+    );
+};
+
+export const NewsItem: React.FunctionComponent = (): JSX.Element => {
+    const { id }: { id: string } = useParams();
+    const item: BlogPost | undefined = list?.news?.find((item) => item.slug.toLowerCase() === id.toLowerCase());
+
+    return <BlogOrNewsItem item={item} />;
+};
+
+const BlogOrNewsItem: React.FunctionComponent<{ item: BlogPost | undefined }> = ({
+    item,
+}: {
+    item: BlogPost | undefined;
+}): JSX.Element => {
+    if (!item) {
+        return <NotFound></NotFound>;
+    }
+    return (
+        <Fragment>
+            {item && (
+                <FullWidthPanel className="flex-center" backgroundColor="#fefefe">
+                    <SinglePanel className="blog-single-panel">
+                        <PostItem item={item}></PostItem>
+                    </SinglePanel>
+                </FullWidthPanel>
+            )}
+        </Fragment>
+    );
 };

@@ -111,6 +111,11 @@ const HeaderNav: React.FunctionComponent<{ onClick?: () => void }> = ({
                     </NavLink>
                 </li>
                 <li>
+                    <NavLink onClick={onClick} to="/news" activeClassName="active">
+                        <span>News</span>
+                    </NavLink>
+                </li>
+                <li>
                     <a href="https://app.buildsys.co" target="_blank" rel="noreferrer">
                         <span>Login</span>
                     </a>

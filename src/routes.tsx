@@ -10,7 +10,7 @@ import { useTitle } from './utils/common';
 import { Demo } from './components/demo/demo';
 import { About } from './components/about/about';
 import Home from './components/home/home';
-import { Blog, BlogItem } from './components/blog/blog';
+import { Blog, BlogItem, News, NewsItem } from './components/blog/blog';
 
 const func: (x: string) => React.FunctionComponent = (x: string) => {
     const A: React.FunctionComponent = () => {
@@ -42,6 +42,8 @@ export const Routes: React.FunctionComponent = () => {
             <Route exact path="/privacy-notice" component={Privacy} />
             <Route path="/blog/:id" component={BlogItem} />
             <Route exact path="/blog" component={Blog} />
+            <Route path="/news/:id" component={NewsItem} />
+            <Route exact path="/news" component={News} />
             <Route exact path="/about-us">
                 <Redirect to="/us" />
             </Route>

@@ -1,5 +1,5 @@
 export default {
-    all: [
+    blogs: [
         {
             title: 'Technology enabling collaboration in construction teams during the pandemic',
             description:
@@ -21,35 +21,6 @@ export default {
             tags: ['technology', 'collaboration', 'managers', 'projects'],
         },
         {
-            title: 'Our Founder Yukti Arora on Women’s Day',
-            description:
-                'Women need to take up more challenging roles in the construction domain. Women need to take a stand wherever required and put forward their point unapologetically. Times are changing and I hope to see more women representatives in the construction industry soon.',
-            slug: 'womens-day-yukti-arora',
-            date: '2021-03-08T14:43:20.749Z',
-            img: '/assets/blogs/images/Yukti-Arora-Interview.JPG',
-            url: '3.md',
-            tags: ['buildsys in news', 'yukti arora', '99acres'],
-        },
-        {
-            title: 'Together for the long run',
-            description:
-                'Buildsys co-founders yukti and prateek arora on constructing their life and a business with each other.',
-            slug: 'together-long-run',
-            date: '2021-02-21T14:43:20.749Z',
-            img: '/assets/blogs/images/founders-interview.jpg',
-            url: '4.md',
-            tags: ['buildsys in news', 'morningstandard'],
-        },
-        {
-            title:
-                'Lady bosses have a message for Class of 2021: Aspire to be in the C-suite, be bold and keep your options open',
-            description: 'Our founder Yukti Arora featured on ET Panache',
-            slug: 'lady-bosses-2021',
-            date: '2021-03-03T14:43:20.749Z',
-            url: '5.md',
-            tags: ['buildsys in news', 'yukti arora', 'ET panache'],
-        },
-        {
             title: 'Mobile apps replacing conventional 2D drawings and methods in the new era of rapid construction',
             description:
                 'The construction industry has played a pivotal role in responding to the crisis caused by the global pandemic, from constructing hospitals in record time to refurbishing spaces as per social-distancing norms. The shift towards digitization and the efficient use of smartphones has led to enhanced mobility and improved efficiency in all workflows.',
@@ -60,7 +31,8 @@ export default {
             tags: ['digitization', 'construction', 'technology', 'managers', 'projects'],
         },
         {
-            title: 'Mobile Applications enabling management of the construction lifecycle through cloud & collaboration technology',
+            title:
+                'Mobile Applications enabling management of the construction lifecycle through cloud & collaboration technology',
             description:
                 'The construction industry consistently seeks out new methods of digitizing multiple amounts of data, including drawings, texts, images, coordination and communication. One such way to enable this would be by using cloud and collaboration technologies.',
             slug: 'mobile-apps-construction-lifecycle',
@@ -69,15 +41,73 @@ export default {
             img: '/assets/blogs/images/7-1.jpg',
             tags: ['digitization', 'construction', 'technology', 'lifecycle', 'collaboration'],
         },
-                {
+        {
             title: 'What is the Potential of Smart Applications for Construction Management',
             description:
                 'The most powerful feature that smart apps facilitate is offsite project management and instant plan sharing',
-                    slug: 'potential-smart-apps-construction-management',
+            slug: 'potential-smart-apps-construction-management',
             date: '2021-06-24T14:43:20.749Z',
-            url: 'Buildsys Blog 5- Smart apps for construction management.md',
+            url: '8.md',
             img: '/assets/blogs/images/hello Yukti.jpg',
             tags: ['digitization', 'construction', 'technology', 'apps', 'collaboration'],
+        },
+        {
+            title: 'Transitioning to Paperless Construction',
+            description:
+                'Going paperless is about realizing a dramatic increase in productivity for business. By making the switch to a digital solution, construction professionals will be able to save time, eliminate rework, reduce costs, protect their plans and improve accountability.',
+            slug: 'paperless-construction',
+            date: '2021-07-17T14:43:20.749Z',
+            url: '9.md',
+            tags: ['paperless', 'construction', 'technology', 'productivity', 'collaboration'],
+        },
+        {
+            title: 'Tracking Minutes and Tasks of a Meeting',
+            description:
+                'Decisions taken need to be conveyed to all via efficient communication and then monitored and controlled to get things done!',
+            slug: 'meeting-minutes',
+            date: '2021-08-17T14:43:20.749Z',
+            url: '10.md',
+            tags: ['paperless', 'minutes of meeting', 'tasks', 'productivity', 'collaboration'],
+        },
+    ],
+    news: [
+        {
+            title: 'Our Founder Yukti Arora on Women’s Day',
+            description:
+                'Women need to take up more challenging roles in the construction domain. Women need to take a stand wherever required and put forward their point unapologetically. Times are changing and I hope to see more women representatives in the construction industry soon.',
+            slug: 'womens-day-yukti-arora',
+            date: '2021-03-08T14:43:20.749Z',
+            img: '/assets/blogs/images/Yukti-Arora-Interview.JPG',
+            url: '3.md',
+            tags: ['yukti arora', '99acres'],
+        },
+        {
+            title: 'Together for the long run',
+            description:
+                'Buildsys co-founders yukti and prateek arora on constructing their life and a business with each other.',
+            slug: 'together-long-run',
+            date: '2021-02-21T14:43:20.749Z',
+            img: '/assets/blogs/images/founders-interview.jpg',
+            url: '4.md',
+            tags: ['morningstandard'],
+        },
+        {
+            title:
+                'Lady bosses have a message for Class of 2021: Aspire to be in the C-suite, be bold and keep your options open',
+            description: 'Our founder Yukti Arora featured on ET Panache',
+            slug: 'lady-bosses-2021',
+            date: '2021-03-03T14:43:20.749Z',
+            url: '5.md',
+            tags: ['yukti arora', 'ET panache'],
+        },
+        {
+            title: 'Transitioning to paperless construction management',
+            description: 'Our founder Yukti Arora featured on ET Panache',
+            slug: 'ace-update',
+            date: '2021-08-12T14:43:20.749Z',
+            url: '11.md',
+            tags: ['yukti arora', 'ACE Update'],
+            img: '/assets/blogs/images/ace-update.jpg',
         },
     ],
 };

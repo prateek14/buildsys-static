@@ -105,8 +105,12 @@ export const Contact: React.FunctionComponent = (): JSX.Element => {
                                     <a href="mailto:hello@buildsys.co">hello@buildsys.co</a>
                                 </p>
                                 <p className="text-20">
-                                    <a href="tel:+919999778225">+91 9999778225</a> <br />
-                                    8:00 AM - 7:00 PM IST
+                                    <a href="tel:+14259180809">+1 (425) 918-0809</a> <br />
+                                    10:00 AM - 6:00 PM PST
+                                </p>
+                                <p className="text-20">
+                                    <a href="tel:+918802216273">+91 8802216273</a> <br />
+                                    10:00 AM - 6:00 PM IST
                                 </p>
                             </SinglePanel>
                         }>
@@ -179,7 +183,7 @@ export const LeadershipGrid: React.FunctionComponent = (): JSX.Element => {
                         </div>
                     </div>
                 </li>
-                <li className="text-center">
+                {/* <li className="text-center">
                     <picture>
                         <source srcSet="/assets/profile/Prateek.webp" type="image/webp" />
                         <source srcSet="/assets/profile/Prateek.jpg" type="image/jpg" />
@@ -202,7 +206,7 @@ export const LeadershipGrid: React.FunctionComponent = (): JSX.Element => {
                             </a>
                         </div>
                     </div>
-                </li>
+                </li> */}
             </ul>
         </Fragment>
     );

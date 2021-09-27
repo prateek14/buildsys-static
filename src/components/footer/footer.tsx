@@ -72,6 +72,9 @@ export const FooterMain: React.FunctionComponent = (): JSX.Element => {
                         <p>
                             <Link to="/blog">Blog</Link>
                         </p>
+                        <p>
+                            <Link to="/news">News</Link>
+                        </p>
                     </div>
                 </div>
                 <div className="col">
@@ -105,9 +108,11 @@ export const FooterMain: React.FunctionComponent = (): JSX.Element => {
                     <div>
                         <a href="mailto:hello@buildsys.co">hello@buildsys.co</a> <br />
                         <br />
+                        <a href="tel:+14259180809">+1 (425) 918-0809 </a> <br />
+                        <br />
                         <a href="tel:+911140599999">+91 11 40599999 </a> <br />
                         <br />
-                        <a href="tel:+919999778225">+91 9999778225 </a> <br />
+                        <a href="tel:+918802216273">+91 8802216273 </a> <br />
                         <br />
                     </div>
                     <br />
