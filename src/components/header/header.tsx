@@ -90,11 +90,11 @@ const HeaderNav: React.FunctionComponent<{ onClick?: () => void }> = ({
                         <span>Product</span>
                     </NavLink>
                 </li> */}
-                <li>
+                {/* <li>
                     <NavLink onClick={onClick} to="/pricing" activeClassName="active">
                         <span>Pricing</span>
                     </NavLink>
-                </li>
+                </li> */}
                 <li>
                     <NavLink onClick={onClick} to="/us" activeClassName="active">
                         <span>About Us</span>

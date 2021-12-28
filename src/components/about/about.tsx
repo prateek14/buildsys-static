@@ -185,11 +185,11 @@ export const LeadershipGrid: React.FunctionComponent = (): JSX.Element => {
                 </li>
                 <li className="text-center">
                     <picture>
-                        <source srcSet="/assets/profile/prateek.webp" type="image/webp" />
-                        <source srcSet="/assets/profile/prateek.jpg" type="image/jpg" />
+                        <source srcSet="/assets/profile/Prateek.webp" type="image/webp" />
+                        <source srcSet="/assets/profile/Prateek.jpg" type="image/jpg" />
                         <img
                             className="profile"
-                            src="/assets/profile/prateek.jpg"
+                            src="/assets/profile/Prateek.jpg"
                             alt="Prateek Arora"
                             title="Prateek Arora"
                         />
