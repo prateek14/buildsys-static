@@ -17,12 +17,12 @@ interface PricingSlab {
     desc: string;
     color: string;
     price:
-    | string
-    | {
-        annual: string;
-        monthly?: string;
-        perWhat?: string;
-    };
+        | string
+        | {
+              annual: string;
+              monthly?: string;
+              perWhat?: string;
+          };
     constraints: string[];
     featureText: string;
     features: string[];
@@ -419,12 +419,12 @@ export const Pricing: React.FunctionComponent = (): JSX.Element => {
             desc: 'Drawings & document management',
             color: '#212121',
             price: {
-                annual: currency.symbol + Math.round(1250 * currency.coeff),
-                monthly: currency.symbol + Math.round(1500 * currency.coeff),
+                annual: currency.symbol + Math.round(0 * currency.coeff),
+                monthly: currency.symbol + Math.round(0 * currency.coeff),
                 perWhat: 'user',
             },
-            // constraints: ['Up to 25 Contributors', 'Up to 1000 Drawings', 'Unlimited Projects'],
-            constraints: [],
+            constraints: ['Up to 25 Contributors', 'Up to 1000 Drawings', 'Unlimited Projects'],
+            //constraints: [],
             featureText: 'Key Features',
             features: ['Drawings', 'Meetings', 'Files', 'Photos', 'Tasks'],
         },
@@ -547,14 +547,18 @@ export const PricingPanel: React.FunctionComponent<{ slab: PricingSlab }> = ({
                 <Price slab={slab}></Price>
             </div>
             <hr />
-            {/* <div>
-                <div className="text-16 flex-column">
-                    {slab.constraints.map((v, i) => (
-                        <div key={i}>{v}</div>
-                    ))}
-                </div>
-            </div>
-            <hr /> */}
+            {slab.constraints.length > 0 && (
+                <Fragment>
+                    <div>
+                        <div className="text-16 flex-column">
+                            {slab.constraints.map((v, i) => (
+                                <div key={i}>{v}</div>
+                            ))}
+                        </div>
+                    </div>
+                    <hr />
+                </Fragment>
+            )}
             <div>
                 <div className="text-16 text-bold">{slab.featureText}</div>
                 <div className="text-16 flex-column middle-div">
@@ -575,12 +579,11 @@ export const OnlyContributorsContainer: React.FunctionComponent = (): JSX.Elemen
             <div className={isMobile ? 'contrib-mobile' : ''}>
                 <div className="contrib-container">
                     <div className="flex-column left-cont justify-content-center">
-                        <h3>You only pay for Contributors</h3>
+                        <h3>Account Types</h3>
                         <div>
                             Buildsys has different kinds of accounts for members of your team - Admins, Contributors
                             &amp; Readers. Admins &amp; Contributors can create new drawings, tasks, meetings, RFIs etc.
-                            However, Readers can only view and comment on existing data on Buildsys. We only charge for
-                            the people who create or upload data to Buildsys.
+                            However, Readers can only view and comment on existing data on Buildsys.
                         </div>
                     </div>
                     <div className="flex-column flex-justify-center right-cont">
@@ -590,7 +593,7 @@ export const OnlyContributorsContainer: React.FunctionComponent = (): JSX.Elemen
                                     <h4>Admin accounts</h4>
                                     <div className="text-14">Have full access to all available features</div>
                                 </div>
-                                <p className="account-type-price active text-14">Paid</p>
+                                {/* <p className="account-type-price active text-14">Paid</p> */}
                             </div>
                             <div className="account-type flex-center flex-justify pv-24">
                                 <div className="account-type-info">
@@ -600,7 +603,7 @@ export const OnlyContributorsContainer: React.FunctionComponent = (): JSX.Elemen
                                         submittals and forms.
                                     </div>
                                 </div>
-                                <p className="account-type-price active text-14">Paid</p>
+                                {/* <p className="account-type-price active text-14">Paid</p> */}
                             </div>
                             <div className="account-type flex-center flex-justify pv-24">
                                 <div className="account-type-info">
@@ -608,10 +611,12 @@ export const OnlyContributorsContainer: React.FunctionComponent = (): JSX.Elemen
                                     <div className="text-14">
                                         Can view and comment on uploaded drawings, files, photos, tasks, RFIs,
                                         submittals and forms.
-                                        <p className="no-margin-imp"><sub>Free on Enterprise plan only</sub></p>
+                                        {/* <p className="no-margin-imp">
+                                            <sub>Free on Enterprise plan only</sub>
+                                        </p> */}
                                     </div>
                                 </div>
-                                <p className="account-type-price text-14">Free</p>
+                                {/* <p className="account-type-price text-14">Free</p> */}
                             </div>
                         </div>
                     </div>
@@ -735,7 +740,7 @@ export const FAQs: React.FunctionComponent = (): JSX.Element => {
             },
             // {
             //     title: 'What happens when I hit my 1000 drawing limit on the Basic plan?',
-            //     content: `Our Basic plan has a limit of 1000 drawings. Once you hit the limit of 1000 drawings, you will not be able to upload new drawings. 
+            //     content: `Our Basic plan has a limit of 1000 drawings. Once you hit the limit of 1000 drawings, you will not be able to upload new drawings.
             //     To upload more drawings, you will need to upgrade to either the Pro or the Enterprise plan.`,
             // },
             {

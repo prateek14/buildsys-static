@@ -148,7 +148,7 @@ export const Leadership: React.FunctionComponent = (): JSX.Element => {
     return (
         <FullWidthPanel className="flex-center" backgroundColor="#f8f6f0">
             <SinglePanel width={width} padding={padding}>
-                <h2 className="text-center">Our Leadership</h2>
+                <h2 className="text-center">Our Team</h2>
                 <LeadershipGrid></LeadershipGrid>
             </SinglePanel>
         </FullWidthPanel>
@@ -183,20 +183,20 @@ export const LeadershipGrid: React.FunctionComponent = (): JSX.Element => {
                         </div>
                     </div>
                 </li>
-                {/* <li className="text-center">
+                <li className="text-center">
                     <picture>
-                        <source srcSet="/assets/profile/Prateek.webp" type="image/webp" />
-                        <source srcSet="/assets/profile/Prateek.jpg" type="image/jpg" />
+                        <source srcSet="/assets/profile/prateek.webp" type="image/webp" />
+                        <source srcSet="/assets/profile/prateek.jpg" type="image/jpg" />
                         <img
                             className="profile"
-                            src="/assets/profile/Prateek.jpg"
+                            src="/assets/profile/prateek.jpg"
                             alt="Prateek Arora"
                             title="Prateek Arora"
                         />
                     </picture>
                     <div>
                         <div className="text-20 text-bold">Prateek Arora</div>
-                        <div>CTO &amp; Co-founder</div>
+                        <div>Co-founder</div>
                         <div className="social-icons">
                             <a href="https://www.linkedin.com/in/patarora/" target="_blank" rel="noreferrer">
                                 <FaLinkedin />
@@ -206,7 +206,28 @@ export const LeadershipGrid: React.FunctionComponent = (): JSX.Element => {
                             </a>
                         </div>
                     </div>
-                </li> */}
+                </li>
+                <li className="text-center">
+                    <picture>
+                        <source srcSet="/assets/profile/heyramb.webp" type="image/webp" />
+                        <source srcSet="/assets/profile/heyramb.jpg" type="image/jpg" />
+                        <img
+                            className="profile"
+                            src="/assets/profile/heyramb.jpg"
+                            alt="Heyramb Goyal"
+                            title="Heyramb Goyal"
+                        />
+                    </picture>
+                    <div>
+                        <div className="text-20 text-bold">Heyramb Goyal</div>
+                        <div>Head of Engineering</div>
+                        <div className="social-icons">
+                            <a href="https://www.linkedin.com/in/hey24sheep/" target="_blank" rel="noreferrer">
+                                <FaLinkedin />
+                            </a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </Fragment>
     );

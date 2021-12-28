@@ -82,6 +82,44 @@ const X: { blogs: BlogPost[]; news: BlogPost[] } = {
             url: 'https://www.hotelierindia.com/design/17181-cut-cost-increase-productivity-promote-collaboration',
         },
         {
+            title: 'Cloud technology & Apps bridging the gaps in the construction industry in the post-COVID19 world',
+            description:
+                "The construction industry's accelerated adoption of cloud-based tools could be the silver lining that improves productivity.",
+            date: '2021-03-26T14:43:20.749Z',
+            publisher: 'Economic Times | Hospitality',
+            external: true,
+            url:
+                'https://hospitality.economictimes.indiatimes.com/news/speaking-heads/cloud-technology-apps-bridging-the-gaps-in-the-construction-industry-in-the-post-covid19-world-/81687548',
+        },
+        {
+            title: 'Transitioning to Paperless Construction',
+            description:
+                'Yukti Arora, Co-Founder and CPO, Buildsys writes about making your construction projects paperless.',
+            date: '2021-08-12T14:43:20.749Z',
+            publisher: 'Ace Update',
+            external: true,
+            url: 'https://aceupdate.com/2021/08/12/transitioning-to-paperless-construction-management/',
+        },
+        {
+            title: 'Going Paperless',
+            description:
+                'Yukti Arora explains how a streamlined construction process can reduce paperwork and enable effective field-to-office communication.',
+            date: '2021-10-25T14:43:20.749Z',
+            publisher: 'Southeast Asia Building',
+            external: true,
+            url: 'https://seab.tradelinkmedia.biz/publications/6/news/3219',
+        },
+        {
+            title: 'Cloud Technology gaining prominence in the construction industry',
+            description:
+                'Cloud technology has laid the foundation for the digital revolution of the construction industry, writes Yukti Arora.',
+            date: '2021-04-22T14:43:20.749Z',
+            publisher: '99 Acres',
+            external: true,
+            url:
+                'https://www.99acres.com/articles/cloud-technology-gaining-prominence-in-the-construction-industry.html',
+        },
+        {
             title: 'Together for the long run',
             description:
                 'Buildsys co-founders yukti and prateek arora on constructing their life and a business with each other.',
@@ -95,22 +133,48 @@ const X: { blogs: BlogPost[]; news: BlogPost[] } = {
             title: 'Our Founder Yukti Arora on Women’s Day',
             description:
                 'Women need to take up more challenging roles in the construction domain. Women need to take a stand wherever required and put forward their point unapologetically. Times are changing and I hope to see more women representatives in the construction industry soon.',
-            slug: 'womens-day-yukti-arora',
             date: '2021-03-08T14:43:20.749Z',
             img: '/assets/blogs/images/Yukti-Arora-Interview.JPG',
             publisher: '99 acres',
             external: true,
-            url: '',
+            url:
+                'https://www.99acres.com/articles/womens-day-women-need-to-take-up-more-challenging-roles-in-the-construction-domain.html',
         },
         {
             title:
                 'Lady bosses have a message for Class of 2021: Aspire to be in the C-suite, be bold and keep your options open',
             description: 'Our founder Yukti Arora featured on ET Panache',
-            slug: 'lady-bosses-2021',
             date: '2021-03-03T14:43:20.749Z',
             publisher: 'The Economic Times | Panache',
             external: true,
-            url: '',
+            url: 'https://www.dropbox.com/s/k6p6hf9lp06eup7/ET%20.pdf?dl=0',
+        },
+        {
+            title: 'Real Estate Gets A Tech Boost During Pandemic',
+            description: 'Industry leaders talk about impact of pandemic on the construction industry in India.',
+            date: '2021-10-26T14:43:20.749Z',
+            publisher: 'Times Property',
+            external: true,
+            url: 'https://timesproperty.com/news/post/real-estate-gets-a-tech-boost-during-pandemic-blid1282',
+        },
+        {
+            title: 'Construction Technology: Reshaping India',
+            description:
+                'Yukti Arora and other industry players talk about how technology is reshaping the Indian construction landscape.',
+            date: '2021-07-15T14:43:20.749Z',
+            publisher: 'Construction Times',
+            external: true,
+            url:
+                'https://www.dropbox.com/s/tbjf94a6e3w4leb/Construction%20Times,Tools%20and%20Technology,%20July%202021.pdf?dl=0',
+        },
+        {
+            title: 'Technology in the Construction Industry',
+            description:
+                'Yukti Arora talks to Digital First magazine about the impact of COVID-19 pandemic and technology on the construction industry.',
+            date: '2021-08-09T14:43:20.749Z',
+            publisher: 'Digital First',
+            external: true,
+            url: 'https://www.digitalfirstmagazine.com/technology-in-the-construction-industry/',
         },
         {
             title: 'The process of construction requires informed decision making',
