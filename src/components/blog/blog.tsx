@@ -6,19 +6,10 @@ import { useTitle } from '../../utils/common';
 import { NotFound } from '../404/404';
 import { FullWidthPanel } from '../common/full-width-panel';
 import { SinglePanel } from '../common/single-panel';
+import { BlogPost } from './abstract';
 import './blog.scss';
 
 import list from './list';
-
-interface BlogPost {
-    title: string;
-    url: string;
-    slug: string;
-    description: string;
-    date: string;
-    img?: string;
-    tags: string[];
-}
 
 export const Blog: React.FunctionComponent = (): JSX.Element => {
     useTitle('Blog');
@@ -51,7 +42,7 @@ export const Blog: React.FunctionComponent = (): JSX.Element => {
                     isNews={false}
                     onTagChange={(tag) => setCurrentTag(tag)}
                     items={items.filter(
-                        (i) => currentTag === 'All' || !!i.tags.find((t) => t === currentTag),
+                        (i) => currentTag === 'All' || !!i.tags?.find((t) => t === currentTag),
                     )}></PostList>
             </FullWidthPanel>
         </Fragment>
@@ -85,21 +76,32 @@ export const PostListItem: React.FunctionComponent<{
     }
     const hasTags = item.tags && item.tags.length > 0;
     const prefix = props.isNews ? '/news/' : '/blog/';
+    const child = (
+        <div className="flex-column">
+            {item.img && (
+                <div className="image">
+                    <img src={item.img} />
+                </div>
+            )}
+            <div className="title">{item.title}</div>
+        </div>
+    );
+    const link = item.external ? (
+        <a href={item.url} target="blank">
+            {child}
+        </a>
+    ) : (
+        <Link to={prefix + item.slug} target="blank">
+            {child}
+        </Link>
+    );
     return (
         <div className="post-list-item flex-column">
-            <Link to={prefix + item.slug}>
-                <div className="flex-column">
-                    {item.img && (
-                        <div className="image">
-                            <img src={item.img} />
-                        </div>
-                    )}
-                    <div className="title">{item.title}</div>
-                </div>
-            </Link>
+            <div className="publisher">{item.publisher}</div>
+            {link}
             {hasTags && (
                 <div className="tags">
-                    {item.tags.map((tag, index) => (
+                    {item.tags?.map((tag, index) => (
                         <div className="text-14" onClick={() => props.onTagChange(tag)} key={index}>
                             {tag}
                         </div>
@@ -114,7 +116,7 @@ export const PostListItem: React.FunctionComponent<{
 
 export const BlogItem: React.FunctionComponent = (): JSX.Element => {
     const { id }: { id: string } = useParams();
-    const item = list.blogs.find((item) => item.slug.toLowerCase() === id.toLowerCase());
+    const item = list.blogs.find((item) => item?.slug?.toLowerCase() === id.toLowerCase());
     return <BlogOrNewsItem item={item} />;
 };
 
@@ -169,7 +171,7 @@ const getBlogItem = async (url: string): Promise<string> => {
 const getTags = (items: BlogPost[]): string[] => {
     const t: Dictionary<number> = {};
     items.forEach((p) => {
-        p.tags.forEach((tag) => {
+        p.tags?.forEach((tag) => {
             if (t[tag]) {
                 t[tag]++;
             } else {
@@ -194,6 +196,7 @@ export const News: React.FunctionComponent = (): JSX.Element => {
         aDate = isNaN(aDate) ? 0 : aDate;
         return bDate - aDate;
     });
+    // const items = list.news;
     const tags = getTags(items);
     const [currentTag, setCurrentTag] = useState<string>('All');
 
@@ -216,7 +219,7 @@ export const News: React.FunctionComponent = (): JSX.Element => {
                     isNews={true}
                     onTagChange={(tag) => setCurrentTag(tag)}
                     items={items.filter(
-                        (i) => currentTag === 'All' || !!i.tags.find((t) => t === currentTag),
+                        (i) => currentTag === 'All' || !!i.tags?.find((t) => t === currentTag),
                     )}></PostList>
             </FullWidthPanel>
         </Fragment>
@@ -225,7 +228,9 @@ export const News: React.FunctionComponent = (): JSX.Element => {
 
 export const NewsItem: React.FunctionComponent = (): JSX.Element => {
     const { id }: { id: string } = useParams();
-    const item: BlogPost | undefined = list?.news?.find((item) => item.slug.toLowerCase() === id.toLowerCase());
+    const item: BlogPost | undefined = list?.news?.find(
+        (item) => (item?.slug ?? '')?.toLowerCase() === id.toLowerCase(),
+    );
 
     return <BlogOrNewsItem item={item} />;
 };

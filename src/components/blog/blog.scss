@@ -48,21 +48,33 @@
     .image {
         img {
             max-width: 100%;
+            max-height: 300px;
         }
+        margin-bottom: 12px;
     }
 
     .title {
-        font-size: 36px;
-        line-height: 1.1;
-        font-weight: 700;
-        margin: 12px 0;
+        // font-size: 24px;
+        // line-height: 1.1;
+        // font-weight: 700;
+        margin-bottom: 12px;
         letter-spacing: -1px;
+        padding: 0;
+        text-transform: uppercase;
+        color: #000;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 2.67px;
     }
 
     .date {
         font-size: 14px;
         color: #777;
         margin-bottom: 12px;
+    }
+
+    .tags {
+        display: none;
     }
 
     .tags>div {
@@ -74,9 +86,23 @@
         margin-bottom: 12px;
         cursor: pointer;
     }
+
+    .publisher {
+        font-size: 10px;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 1px;
+        display: inline-block;
+        margin-bottom: 12px;
+    }
+
+    .byline {
+        font-style: italic;
+    }
 }
 
 .filter-tags {
+    display: none;
     padding: 0 12px;
 
     >div {

@@ -1,4 +1,6 @@
-export default {
+import { BlogPost } from './abstract';
+
+const X: { blogs: BlogPost[]; news: BlogPost[] } = {
     blogs: [
         {
             title: 'Technology enabling collaboration in construction teams during the pandemic',
@@ -72,24 +74,33 @@ export default {
     ],
     news: [
         {
+            title: 'Cut costs, increase productivity, promote collaboration',
+            description: 'Merits of going paperless in architecture, engineering and construction with Buildsys.',
+            date: '2021-09-22T14:43:20.749Z',
+            publisher: 'Hotelier India',
+            external: true,
+            url: 'https://www.hotelierindia.com/design/17181-cut-cost-increase-productivity-promote-collaboration',
+        },
+        {
+            title: 'Together for the long run',
+            description:
+                'Buildsys co-founders yukti and prateek arora on constructing their life and a business with each other.',
+            date: '2021-02-21T14:43:20.749Z',
+            img: '/assets/blogs/images/together.png',
+            publisher: 'The Sunday Standard',
+            external: true,
+            url: 'https://www.newindianexpress.com/thesundaystandard/2021/feb/21/together-for-thelong-run-2266690.html',
+        },
+        {
             title: 'Our Founder Yukti Arora on Women’s Day',
             description:
                 'Women need to take up more challenging roles in the construction domain. Women need to take a stand wherever required and put forward their point unapologetically. Times are changing and I hope to see more women representatives in the construction industry soon.',
             slug: 'womens-day-yukti-arora',
             date: '2021-03-08T14:43:20.749Z',
             img: '/assets/blogs/images/Yukti-Arora-Interview.JPG',
-            url: '3.md',
-            tags: ['yukti arora', '99acres'],
-        },
-        {
-            title: 'Together for the long run',
-            description:
-                'Buildsys co-founders yukti and prateek arora on constructing their life and a business with each other.',
-            slug: 'together-long-run',
-            date: '2021-02-21T14:43:20.749Z',
-            img: '/assets/blogs/images/founders-interview.jpg',
-            url: '4.md',
-            tags: ['morningstandard'],
+            publisher: '99 acres',
+            external: true,
+            url: '',
         },
         {
             title:
@@ -97,17 +108,62 @@ export default {
             description: 'Our founder Yukti Arora featured on ET Panache',
             slug: 'lady-bosses-2021',
             date: '2021-03-03T14:43:20.749Z',
-            url: '5.md',
-            tags: ['yukti arora', 'ET panache'],
+            publisher: 'The Economic Times | Panache',
+            external: true,
+            url: '',
         },
         {
-            title: 'Transitioning to paperless construction management',
-            description: 'Our founder Yukti Arora featured on ET Panache',
-            slug: 'ace-update',
-            date: '2021-08-12T14:43:20.749Z',
-            url: '11.md',
-            tags: ['yukti arora', 'ACE Update'],
-            img: '/assets/blogs/images/ace-update.jpg',
+            title: 'The process of construction requires informed decision making',
+            description:
+                'Yukti Arora, Co-Founder and CPO, Buildsys points out the challenges in remote construction management and how Buildsys can help simplify the process.',
+            date: '2021-05-31T14:43:20.749Z',
+            publisher: 'Ace Update',
+            external: true,
+            url:
+                'https://aceupdate.com/2021/05/31/the-process-of-construction-requires-informed-decision-making-yukti-arora-buildsys/',
+        },
+        {
+            title: '#LetsTalk Transitioning to Paperless Construction',
+            description: 'Paperless construction with Buildsys',
+            date: '2021-08-26T14:43:20.749Z',
+            publisher: 'Architect and Interiors India',
+            external: true,
+            url:
+                'https://www.architectandinteriorsindia.com/people/23748-letstalk-transitioning-to-paperless-construction-management',
+        },
+
+        {
+            title: 'Construction productivity application heralds digital revolution in the industry',
+            description:
+                'Buildsys offers a streamlined construction process, reducing paperwork and enabling effective field-to-office communication',
+            date: '2021-03-23T14:43:20.749Z',
+            publisher: 'Construction Week',
+            external: true,
+            url:
+                'https://www.constructionweekonline.in/business/17031-construction-productivity-application-heralds-digital-revolution-in-the-industry',
+        },
+
+        {
+            title: 'Buildsys construction productivity app paves way for digital revolution in the industry',
+            description:
+                'Buildsys offers a streamlined construction process, reducing paperwork and enabling effective field-to-office communication',
+            date: '2021-03-23T14:43:20.749Z',
+            publisher: 'NBM & CW',
+            external: true,
+            url:
+                'https://www.nbmcw.com/product-technology/technologies-digitilization-software/buildsys-construction-productivity-app-paves-way-for-digital-revolution-in-the-industry.html',
+        },
+
+        {
+            title: 'Construction Technology Trade News',
+            description:
+                'Buildsys reduces paperwork and makes field-to-office communication faster, trackable and mobile.',
+            date: '2021-03-12T14:43:20.749Z',
+            publisher: 'Architecture+Design',
+            external: true,
+            url: 'https://www.dropbox.com/s/uitkqoi4ijtg84p/AD_2.jpeg?dl=0',
         },
     ],
 };
+
+export default X;
