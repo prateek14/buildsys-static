@@ -71,6 +71,42 @@ const X: { blogs: BlogPost[]; news: BlogPost[] } = {
             url: '10.md',
             tags: ['paperless', 'minutes of meeting', 'tasks', 'productivity', 'collaboration'],
         },
+        {
+            title: 'Receiving Real-time updates on Construction Projects',
+            description:
+                'The unprecedented impact of the pandemic has enabled the use of technology to grow more than ever before, with the belief that remote work will become crucial in the post-pandemic world.',
+            slug: 'real-time-updates',
+            date: '2021-11-17T14:43:20.749Z',
+            url: '12.md',
+            tags: ['technology', 'connectivity', 'real-time', 'collaboration'],
+        },
+        {
+            title: 'Collaborative Platforms Enabling Project Team Connectivity',
+            description:
+                'The construction industry, like many other sectors, took a hit during the pandemic with site work coming to a standstill. Projects were delayed indefinitely, and supply chains were disrupted.',
+            slug: 'team-connectivity',
+            date: '2021-12-17T14:43:20.749Z',
+            url: '13.md',
+            tags: ['technology', 'connectivity', 'construction management', 'communication', 'collaboration'],
+        },
+        {
+            title: 'An introduction to Knowledge Management',
+            description:
+                'Construction projects often run late, exceed the budget, and in many cases, lead to a loss of time, energy and money.',
+            slug: 'knowledge-management',
+            date: '2022-01-17T14:43:20.749Z',
+            url: '14.md',
+            tags: ['knowledge management', 'construction management', 'collaboration'],
+        },
+        {
+            title: 'How can a collaboration platform shape the future of the construction industry?',
+            description:
+                'The Covid-19 pandemic has caused a huge transformation in the ways of operation in the construction industry. Collaborative platform technology is seen to be growing more than ever before with the belief that remote work will become crucial in the post-pandemic world.',
+            slug: 'future-construction-industry',
+            date: '2022-02-17T14:43:20.749Z',
+            url: '15.md',
+            tags: ['technology', 'construction management', 'collaboration'],
+        },
     ],
     news: [
         {
