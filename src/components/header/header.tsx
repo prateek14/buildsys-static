@@ -102,7 +102,7 @@ const HeaderNav: React.FunctionComponent<{ onClick?: () => void }> = ({
                 </li>
                 <li>
                     <NavLink onClick={onClick} to="/schedule-demo" activeClassName="active">
-                        <span>Schedule Demo</span>
+                        <span>Sign up</span>
                     </NavLink>
                 </li>
                 <li>

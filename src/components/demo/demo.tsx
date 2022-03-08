@@ -94,9 +94,9 @@ export const Demo: React.FunctionComponent = (): JSX.Element => {
                     <SinglePanel>
                         <div style={{ maxWidth: '500px' }}>
                             <div className="demo-form">
-                                <h2 className="text-center">Schedule a Demo</h2>
+                                <h2 className="text-center">Sign up for a demo</h2>
                                 <p className="text-center">All demos come with a free 15 day trial.</p>
-                                <Form data={entries} onError={setErrors} onSubmit={onSubmit}>
+                                {/* <Form data={entries} onError={setErrors} onSubmit={onSubmit}>
                                     {Object.keys(entries).map((key) => {
                                         return (
                                             <div key={key} className={entries[key].size}>
@@ -107,14 +107,18 @@ export const Demo: React.FunctionComponent = (): JSX.Element => {
                                     <div className="full text-center">
                                         <input type="submit" value="Schedule Demo Now" />
                                     </div>
-                                </Form>
+                                </Form> */}
+                                {/* <input type="button" value="Sign up"/> */}
+                                <a target="blank" className="signup-link" href="https://app.buildsys.co/account/signup">
+                                    Sign up
+                                </a>
                             </div>
                         </div>
                     </SinglePanel>
                 }>
                 <SinglePanel className="buildsys-in-action">
                     <h1>See Buildsys in Action</h1>
-                    <p className="text-20">Schedule a personalized demo today</p>
+                    <p className="text-20">Sign up for a personalized demo today</p>
                     <hr className="buildsys"></hr>
                     <p className="text-16">See how Buildsys connects the field to the office to help you achieve:</p>
                     <ul className="text-16">
