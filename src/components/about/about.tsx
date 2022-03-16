@@ -58,7 +58,7 @@ export const About: React.FunctionComponent = (): JSX.Element => {
                 <SinglePanel width={colWidth} padding={colPadding2}>
                     <h2>Who we are</h2>
                     <div className="text-20">
-                        Founded in 2017 and Buildsys is a construction productivity software company. Buildsys provides
+                        Founded in 2017, Buildsys is a construction productivity software company. Buildsys provides
                         software that makes project communication faster, accountable, and painless, allowing project
                         teams to save time, money and resources.
                     </div>

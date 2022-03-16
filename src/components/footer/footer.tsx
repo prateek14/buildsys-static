@@ -83,7 +83,7 @@ export const FooterMain: React.FunctionComponent = (): JSX.Element => {
                         <Link to="/pricing">Pricing</Link>
                     </p>
                     <p>
-                        <Link to="/schedule-demo">Schedule Demo</Link>
+                        <Link to="/schedule-demo">Sign Up</Link>
                     </p>
                     <p>
                         <Link to="/terms">Terms of Use</Link>

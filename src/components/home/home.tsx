@@ -61,13 +61,13 @@ export default function Home(): ReactElement {
                         backgroundColor="#f8f6f0">
                         <h1 className="text-48">Have all project data at one place.</h1>
                         <p className="text-20">
-                            Buildsys brings all you project data at one place. You can manage project tasks, documents,
-                            meetings, drawings, RFIs, Submittals all at one place, while letting you use all the the
+                            Buildsys brings all your project data at one place. You can manage project tasks, documents,
+                            meetings, drawings, RFIs, Submittals all at one place, while letting you use all the
                             tools you already love.
                         </p>
                         <p className="text-20">
-                            Buildsys integrates with leading softwares used by construction professionals; syncing
-                            information stored in silos and with different departments and brings it all at one place.
+                            Buildsys integrates with leading software products used by construction professionals; syncing
+                            information stored in silos and with different departments and brings it all to one place.
                         </p>
                         <FunFact>
                             Project teams spend almost 45 percent of their time, simply collating data from different
@@ -118,7 +118,7 @@ export default function Home(): ReactElement {
                     backgroundColor="#ffffff">
                     <h1 className="text-48">Save time spent on rework and coordination.</h1>
                     <p className="text-20">
-                        Buildsys helps cuts through the clutter and follow up cycles, surfacing what matters the most.
+                        Buildsys helps cuts through the clutter and follow-up cycles, surfacing what matters the most.
                     </p>
                     <p className="text-20">
                         Sending drawings or meeting minutes over Buildsys is more efficient than typing long emails,
@@ -131,7 +131,7 @@ export default function Home(): ReactElement {
                     </p>
                     <FunFact>
                         A push notification about an issue sent on a users’ personal device, be that their mobile phone
-                        or tablet is 90% more likely to receive an immediate response than a question sent via email.
+                        or tablet, is 90% more likely to receive an immediate response than a question sent via email.
                         Try it.
                     </FunFact>
                 </SinglePanel>
@@ -151,7 +151,7 @@ export default function Home(): ReactElement {
                         <p className="text-20">
                             With Buildsys, document management becomes so simple, trackable and accountable. Sending
                             reminders about upcoming tasks and overdue items is built-in and seamless. No need for ten
-                            different modes of follow ups.
+                            different modes of follow-ups.
                         </p>
                         <p className="text-20">
                             Receiving project updates is real-time. Buildsys will notify you about all the updates you
@@ -160,7 +160,7 @@ export default function Home(): ReactElement {
                         </p>
                         <FunFact>
                             After reviewing numerous studies conducted over a 30-year period documenting levels of
-                            wasted time in construction activity, one meta- analysis concluded that an average of 49.6
+                            wasted time in construction activity, one meta-analysis concluded that an average of 49.6
                             percent of time in construction is devoted to wasteful activity.
                         </FunFact>
                     </SinglePanel>

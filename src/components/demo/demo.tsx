@@ -9,7 +9,7 @@ import { TwoColumnPanel } from '../common/two-column-panel';
 import './demo.scss';
 
 export const Demo: React.FunctionComponent = (): JSX.Element => {
-    const title = 'Schedule a Demo';
+    const title = 'Sign Up';
     useTitle(title);
     const [errors, setErrors] = useState<Dictionary<string>>({});
     const entries: Dictionary<FormEntry> = {
